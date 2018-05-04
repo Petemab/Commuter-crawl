@@ -19,8 +19,10 @@ mongoose.connect(dbURI, (err, db) => {
     teamMember: 'Ruta',
     age: '32',
     location: 'Brighton'
-  }]);
+  }])
 
-
+    .then(crawls => console.log(`${crawls.length} crawls created`))
+    .catch(err => console.log(err))
+    .finally(() => mongoose.connection.close());
 
 });
