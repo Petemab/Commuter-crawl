@@ -1,0 +1,21 @@
+
+
+
+<ul>
+  <li><a ng-click="stationsIndex.getStations('bakerloo')">Bakerloo Line</a></li>
+  <li><a ng-click="stationsIndex.getStations('central')">Central Line</a></li>
+  <li><a ng-click="stationsIndex.getStations('circle')">Circle Line</a></li>
+  <li><a ng-click="stationsIndex.getStations('district')">District Line</a></li>
+  <li><a ng-click="stationsIndex.getStations('hammersmith-city')">Hammersmith and City Line</a></li>
+  <li><a ng-click="stationsIndex.getStations('jubilee')">Jubilee Line</a></li>
+  <li><a ng-click="stationsIndex.getStations('metropolitan')">Metropolitan Line</a></li>
+  <li><a ng-click="stationsIndex.getStations('northern')">Northern Line</a></li>
+  <li><a ng-click="stationsIndex.getStations('piccadily')">Piccadily Line</a></li>
+  <li><a ng-click="stationsIndex.getStations('victoria')">Victoria Line</a></li>
+  <li><a ng-click="stationsIndex.getStations('waterloo-city')">Waterloo and City Line</a></li>
+</ul>
+<div class="map" g-map center="{ lat: 51.515, lng: -0.078 }" stations="stationsIndex.all" get-bars="stationsIndex.getBars(bars)">Goole Map Goes Here</div>
+
+<ul>
+  <li ng-repeat="bar in stationsIndex.bars">{{ bar.name }}</li>
+</ul>
