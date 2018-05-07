@@ -6,7 +6,12 @@ function Crawl($http) {
     return $http.get(`/api/crawls/${id}`);
 
   }
+
+  function updateById(id, data){
+    return $http.put(`/api/crawls/${id}`, data);
+  }
   this.findById = findById;
+  this.updateById = updateById;
 }
 
 export default Crawl;
