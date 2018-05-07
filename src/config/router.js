@@ -1,4 +1,4 @@
-
+secureState.$inject
 
 
 
@@ -15,7 +15,15 @@ function Router($stateProvider, $urlRouterProvider){
       url: '/stations',
       templateUrl: 'views/stations/index.html',
       controller: 'StationsIndexCtrl as stationsIndex'
-    });
+    })
+    // this needds tobe added but i dont know the  branch name
+
+
+    // .state('crawlsNew', {
+    //   url: '/crawls/new',
+    //   templateUrl: 'views/crawls/new.html',
+    //   controller: 'CrawlsNewCtrl as crawlsNew'
+    // });
 
   $urlRouterProvider.otherwise('/');
 
