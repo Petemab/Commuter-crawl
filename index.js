@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 const router = require('./config/router');
 const { port, dbURI } = require('./config/environment');
-const errorHandler = require('./liberrorHandler');
+const errorHandler = require('./lib/errorHandler');
 
 mongoose.connect(dbURI);
 
@@ -16,7 +16,6 @@ app.use('/api', router);
 app.use(errorHandler);
 
 app.listen(port, () => console.log(`Up and running on port ${port}`));
-
 
 
 

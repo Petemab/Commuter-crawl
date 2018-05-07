@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String }
 });
 
-userSchema.plugin(require('mongoose-unique.validator'));
+userSchema.plugin(require('mongoose-unique-validator'));
 
 userSchema.set('toJSON', {
   transform(doc, json) {
