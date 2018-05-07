@@ -9,7 +9,7 @@ mongoose.connect(dbURI, (err, db) => {
 
   Crawl.create([{
     name: 'Jeff',
-    date: '32',
+    age: '32',
     location: 'Scunthorpe'
   },{
     teamMember: 'Noel',
