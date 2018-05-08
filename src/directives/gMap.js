@@ -13,7 +13,7 @@ function gMap() {
 
       const map = new google.maps.Map($element[0], {
         center: { lat: 51.515, lng: -0.078 },
-        zoom: 11
+        zoom: 14
       });
 
       const placesService = new google.maps.places.PlacesService(map);

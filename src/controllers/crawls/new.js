@@ -3,6 +3,7 @@ function CrawlsNewCtrl(Crawl, $state, $scope, $http) {
   const vm = this;
   vm.data = {};
   vm.stations = [];
+  vm.bars = [];
   vm.showMap = false;
 
   function handleCreate() {
@@ -50,6 +51,12 @@ function CrawlsNewCtrl(Crawl, $state, $scope, $http) {
     vm.showMap = true;
     console.log('after showmap variable', vm.showMap);
   }
+  function getBars(bars){
+    vm.bars = bars;
+    $scope.$apply();
+    console.log(bars);
+  }
+  vm.getBars = getBars;
   vm.handleCreate = handleCreate;
   $scope.$watch(() => vm.data.tubeLine, () => getStations(vm.data.tubeLine));
   vm.getCrawlStations = getCrawlStations;
