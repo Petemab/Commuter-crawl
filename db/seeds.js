@@ -11,21 +11,21 @@ mongoose.connect(dbURI, (err, db) => {
   Crawl.create([{
 
     name: 'GA crawl',
-    date: '22/01/94',
+    date: '22-Jan-1994',
     line: 'central',
     start: 'mile end',
     end: 'oxford st',
     pubs: []
   },{
     name: 'central crawl',
-    date: '22/01/94',
+    date: '22-Jan-1994',
     line: 'central',
     start: 'mile end',
     end: 'oxford st',
     pubs: []
   },{
     name: 'westside crawl',
-    date: '22/01/94',
+    date: '22-Jan-1994',
     line: 'central',
     start: 'mile end',
     end: 'oxford st',
