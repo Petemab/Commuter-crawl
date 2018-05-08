@@ -27,3 +27,5 @@ function Router($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/');
 
 }
+
+export default Router;
