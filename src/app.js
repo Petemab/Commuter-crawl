@@ -16,6 +16,8 @@ import Router from './config/router';
 import CrawlsShowCtrl from './controllers/crawls/show';
 import CrawlsEditCtrl from './controllers/crawls/edit';
 import StationsIndexCtrl from './controllers/stations/index';
+import RegisterCtrl from './controllers/auth/register';
+import LoginCtrl from './controllers/auth/login';
 
 
 //models
@@ -29,5 +31,7 @@ angular.module('crawls', ['ui.router', 'satellizer'])
   .controller('StationsIndexCtrl', StationsIndexCtrl)
   .controller('CrawlsShowCtrl', CrawlsShowCtrl)
   .controller('CrawlsEditCtrl', CrawlsEditCtrl)
+  .controller('RegisterCtrl', RegisterCtrl)
+  .controller('LoginCtrl', LoginCtrl)
   .directive('gMap', gMap)
   .service('Crawl', Crawl);
