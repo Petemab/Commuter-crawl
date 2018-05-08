@@ -9,11 +9,12 @@ import 'satellizer';
 
 //our modules
 import Router from './config/router';
-
+import Auth from './config/auth';
 
 
 
 import CrawlsShowCtrl from './controllers/crawls/show';
+import CrawlsNewCtrl from './controllers/crawls/new';
 import CrawlsEditCtrl from './controllers/crawls/edit';
 import StationsIndexCtrl from './controllers/stations/index';
 import RegisterCtrl from './controllers/auth/register';
@@ -28,9 +29,11 @@ import Crawl from './models/crawl';
 
 angular.module('crawls', ['ui.router', 'satellizer'])
   .config(Router)
+  .config(Auth)
   .controller('StationsIndexCtrl', StationsIndexCtrl)
   .controller('CrawlsShowCtrl', CrawlsShowCtrl)
   .controller('CrawlsEditCtrl', CrawlsEditCtrl)
+  .controller('CrawlsNewCtrl', CrawlsNewCtrl)
   .controller('RegisterCtrl', RegisterCtrl)
   .controller('LoginCtrl', LoginCtrl)
   .directive('gMap', gMap)

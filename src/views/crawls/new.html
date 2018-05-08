@@ -1,23 +1,69 @@
+<pre>{{ crawlsNew.data | json }}</pre>
 <form name="crawlsNew.form" ng-submit="crawlsNew.handleCreate()" novalidate>
   <div class="field">
-    <label for="teamMember">Team Member</label>
-    <input class="input" placeholder="Grape" name="teamMember" ng-model="crawlsNew.data.teamMember" required />
-    <div ng-if="crawlsNew.form.teamMember.$touched || crawlsNew.form.$submitted">
-      <small ng-if="crawlsNew.form.teamMember.$error.required">This field is required</small>
+    <label for="name">Name</label>
+    <input class="input" placeholder="Name" name="name" ng-model="crawlsNew.data.name" required />
+    <div ng-if="crawlsNew.form.name.$touched || crawlsNew.form.$submitted">
+      <small ng-if="crawlsNew.form.name.$error.required">This field is required</small>
     </div>
   </div>
   <div class="field">
-    <label for="age">Age</label>
-    <input class="input" placeholder="Brand" name="age" ng-model="crawlsNew.data.age" required />
-    <div ng-if="crawlsNew.form.age.$touched || crawlsNew.form.$submitted">
-      <small ng-if="crawlsNew.form.age.$error.required">This field is required</small>
+    <label for="date">Date</label>
+    <input class="input" type="date" name="date" ng-model="crawlsNew.data.date" required />
+    <div ng-if="crawlsNew.form.date.$touched || crawlsNew.form.$submitted">
+      <small ng-if="crawlsNew.form.date.$error.required">This field is required</small>
     </div>
   </div>
   <div class="field">
-    <label for="Location">Location</label>
-    <input class="input" placeholder="Vintage" name="Location" ng-model="crawlsNew.data.Location" required />
-    <div ng-if="crawlsNew.form.Location.$touched || crawlsNew.form.$submitted">
-      <small ng-if="crawlsNew.form.Location.$error.required">This field is required</small>
+    <label for="tubeLine">Tube Line</label>
+    <div class="control">
+      <div class="select">
+        <select name="tubeLine" ng-model="crawlsNew.data.tubeLine">
+          <option value="" selected disabled>Tube Line</option>
+          <option value="bakerloo">Bakerloo</option>
+          <option value="central">Central</option>
+          <option value="circle">Circle</option>
+          <option value="district">District</option>
+          <option value="hammersmith-city">Hammersmith and City</option>
+          <option value="jubilee">Jubilee</option>
+          <option value="metropolitan">Metropolitan</option>
+          <option value="northern">Northern</option>
+          <option value="piccadilly">Piccadilly</option>
+          <option value="victoria">Victoria</option>
+          <option value="waterloo-city">Waterloo and City</option>
+        </select>
+      </div>
+    </div>
+    <div ng-if="crawlsNew.form.tubeLine.$touched || crawlsNew.form.$submitted">
+      <small ng-if="crawlsNew.form.tubeLine.$error.required">This field is required</small>
+    </div>
+  </div>
+  <div class="field" ng-if="crawlsNew.stations.length > 0">
+    <label for="startPoint">Start Point</label>
+    <div class="control">
+      <div class="select">
+        <select name="startPoint" ng-model="crawlsNew.data.startPoint">
+          <option value="" selected disabled>Start Point</option>
+          <option ng-value="station" ng-repeat="station in crawlsNew.stations">{{ station.name }}</option>
+        </select>
+      </div>
+    </div>
+    <div ng-if="crawlsNew.form.startPoint.$touched || crawlsNew.form.$submitted">
+      <small ng-if="crawlsNew.form.startPoint.$error.required">This field is required</small>
+    </div>
+  </div>
+  <div class="field" ng-if="crawlsNew.stations.length > 0">
+    <label for="endPoint">End Point</label>
+    <div class="control">
+      <div class="select">
+        <select name="endPoint" ng-model="crawlsNew.data.endPoint">
+          <option value="" selected disabled>End Point</option>
+          <option ng-value="station" ng-repeat="station in crawlsNew.stations">{{ station.name }}</option>
+        </select>
+      </div>
+    </div>
+    <div ng-if="crawlsNew.form.endPoint.$touched || crawlsNew.form.$submitted">
+      <small ng-if="crawlsNew.form.endPoint.$error.required">This field is required</small>
     </div>
   </div>
 

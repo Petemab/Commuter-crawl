@@ -5,12 +5,12 @@ function LoginCtrl($auth, $state) {
 
   function handleLogin(){
     $auth.login(this.data)
-      .then(() => $state.go('/'));
+      .then(() => $state.go('crawlsNew'));
   }
 
   function authenticate(provider) {
     $auth.authenticate(provider)
-      .then(() => $state.go('/'));
+      .then(() => $state.go('crawlsNew'));
   }
 
   this.handleLogin = handleLogin;
