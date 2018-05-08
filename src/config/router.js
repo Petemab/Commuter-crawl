@@ -15,7 +15,7 @@ function Router($stateProvider, $urlRouterProvider){
       url: '/stations',
       templateUrl: 'views/stations/index.html',
       controller: 'StationsIndexCtrl as stationsIndex'
-    })
+    });
     // this needds tobe added but i dont know the  branch name
 
 
