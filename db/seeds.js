@@ -30,25 +30,28 @@ mongoose.connect(dbURI, (err, db) => {
     start: 'mile end',
     end: 'oxford st',
     pubs: []
-  }]);
+  }])
+    .then(crawls => console.log(`${crawls.length} crawls created`));
 
   User.create([{
 
     username: 'James',
     email: 'James@ga.co',
-    password: 'pass'
+    password: 'pass',
+    passwordConfirmation: 'pass'
   },{
     username: 'Dan',
     email: 'Dan@ga.co',
-    password: 'pass'
+    password: 'pass',
+    passwordConfirmation: 'pass'
   },{
     username: 'Stacey',
     email: 'Stacey@ga.co',
-    password: 'pass'
-
+    password: 'pass',
+    passwordConfirmation: 'pass'
   }])
 
-    .then(crawls => console.log(`${crawls.length} crawls created`))
+    .then(users => console.log(`${users.length} users were created`))
     .catch(err => console.log(err))
     .finally(() => mongoose.connection.close());
 
