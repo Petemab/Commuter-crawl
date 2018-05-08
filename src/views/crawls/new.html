@@ -1,0 +1,26 @@
+<form name="crawlsNew.form" ng-submit="crawlsNew.handleCreate()" novalidate>
+  <div class="field">
+    <label for="teamMember">Team Member</label>
+    <input class="input" placeholder="Grape" name="teamMember" ng-model="crawlsNew.data.teamMember" required />
+    <div ng-if="crawlsNew.form.teamMember.$touched || crawlsNew.form.$submitted">
+      <small ng-if="crawlsNew.form.teamMember.$error.required">This field is required</small>
+    </div>
+  </div>
+  <div class="field">
+    <label for="age">Age</label>
+    <input class="input" placeholder="Brand" name="age" ng-model="crawlsNew.data.age" required />
+    <div ng-if="crawlsNew.form.age.$touched || crawlsNew.form.$submitted">
+      <small ng-if="crawlsNew.form.age.$error.required">This field is required</small>
+    </div>
+  </div>
+  <div class="field">
+    <label for="Location">Location</label>
+    <input class="input" placeholder="Vintage" name="Location" ng-model="crawlsNew.data.Location" required />
+    <div ng-if="crawlsNew.form.Location.$touched || crawlsNew.form.$submitted">
+      <small ng-if="crawlsNew.form.Location.$error.required">This field is required</small>
+    </div>
+  </div>
+
+
+  <button class="button is-primary">Submit</button>
+</form>

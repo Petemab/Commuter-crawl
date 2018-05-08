@@ -1,4 +1,4 @@
-
+secureState.$inject
 
 
 
@@ -21,6 +21,11 @@ function Router($stateProvider, $urlRouterProvider){
       templateUrl: 'views/crawls/edit.html',
       controller: 'CrawlsEditCtrl as crawlsEdit'
       // need to add resolve: { secureState} === James
+    })
+    .state('crawlsNew', {
+      url: '/crawls/new',
+      templateUrl: 'views/crawls/new.html',
+      controller: 'CrawlsNewCtrl as crawlsNew'
     });
 
   $urlRouterProvider.otherwise('/');

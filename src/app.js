@@ -1,10 +1,16 @@
 import angular from 'angular';
 
+//styles
+import './scss/style.scss';
+
 //3rd party dependencies
 import '@uirouter/angularjs';
+import 'satellizer';
 
 //our modules
 import Router from './config/router';
+
+
 
 
 import CrawlsShowCtrl from './controllers/crawls/show';
