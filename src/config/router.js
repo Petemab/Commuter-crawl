@@ -1,7 +1,3 @@
-secureState.$inject
-
-
-
 Router.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 function Router($stateProvider, $urlRouterProvider){
