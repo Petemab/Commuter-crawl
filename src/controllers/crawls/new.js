@@ -3,6 +3,7 @@ function CrawlsNewCtrl(Crawl, $state, $scope, $http) {
   const vm = this;
   vm.data = {};
   vm.stations = [];
+  vm.showMap = false;
 
   function handleCreate() {
     console.log(vm.form);
@@ -34,8 +35,24 @@ function CrawlsNewCtrl(Crawl, $state, $scope, $http) {
           .filter((station, index, self) => self.findIndex(_station => _station.name === station.name) === index);
       });
   }
+  function getCrawlStations() {
+    const startIndex = vm.stations.indexOf(vm.data.startPoint);
+    const endIndex = vm.stations.indexOf(vm.data.endPoint);
+
+    if(endIndex > startIndex) {
+      vm.crawlStations = vm.stations.slice(startIndex, endIndex +1);
+      console.log(vm.crawlStations);
+    } else {
+      vm.crawlStations = vm.stations.slice(endIndex, startIndex +1);
+      console.log(vm.crawlStations);
+    }
+    console.log('before showmap variable', vm.showMap);
+    vm.showMap = true;
+    console.log('after showmap variable', vm.showMap);
+  }
   vm.handleCreate = handleCreate;
   $scope.$watch(() => vm.data.tubeLine, () => getStations(vm.data.tubeLine));
+  vm.getCrawlStations = getCrawlStations;
 }
 
 export default CrawlsNewCtrl;

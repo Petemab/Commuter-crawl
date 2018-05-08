@@ -1,5 +1,5 @@
 <pre>{{ crawlsNew.data | json }}</pre>
-<form name="crawlsNew.form" ng-submit="crawlsNew.handleCreate()" novalidate>
+<form name="crawlsNew.form" ng-if="!crawlsNew.showMap" novalidate>
   <div class="field">
     <label for="name">Name</label>
     <input class="input" placeholder="Name" name="name" ng-model="crawlsNew.data.name" required />
@@ -68,5 +68,11 @@
   </div>
 
 
-  <button class="button is-primary">Submit</button>
+  <button class="button is-primary" ng-click="crawlsNew.getCrawlStations()">Continue</button>
+
+  <!-- ng-submit="crawlsNew.handleCreate()" -->
 </form>
+
+<div g-map center="{ lat: 51.515, lng: -0.078 }" class="map" ng-if="crawlsNew.showMap" stations="crawlsNew.crawlStations">
+
+</div>
