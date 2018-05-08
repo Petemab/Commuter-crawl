@@ -1,7 +1,3 @@
-secureState.$inject
-
-
-
 Router.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 function Router($stateProvider, $urlRouterProvider){
@@ -16,15 +12,20 @@ function Router($stateProvider, $urlRouterProvider){
       templateUrl: 'views/stations/index.html',
       controller: 'StationsIndexCtrl as stationsIndex'
     })
-    // this needds tobe added but i dont know the  branch name
-
-
-    // .state('crawlsNew', {
-    //   url: '/crawls/new',
-    //   templateUrl: 'views/crawls/new.html',
-    //   controller: 'CrawlsNewCtrl as crawlsNew'
-    // });
+    .state('crawlsEdit', {
+      url: '/crawls/:id/edit',
+      templateUrl: 'views/crawls/edit.html',
+      controller: 'CrawlsEditCtrl as crawlsEdit'
+      // need to add resolve: { secureState} === James
+    })
+    .state('crawlsNew', {
+      url: '/crawls/new',
+      templateUrl: 'views/crawls/new.html',
+      controller: 'CrawlsNewCtrl as crawlsNew'
+    });
 
   $urlRouterProvider.otherwise('/');
 
 }
+
+export default Router;
