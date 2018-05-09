@@ -8,7 +8,15 @@ function RegisterCtrl($auth, $state) {
       .then(() => $state.go('login'));
   }
 
+  function handleSubmit(Register){
+    if(this.form.$invalid) return false;
+
+    Register.create(this.user)
+      .then(() => $state.go('login'));
+  }
+
   this.handleRegister = handleRegister;
+  this.handleSubmit = handleSubmit;
 
 }
 

@@ -7,6 +7,13 @@ function LoginCtrl($auth, $state) {
     $auth.login(this.data)
       .then(() => $state.go('crawlsNew'));
   }
+  //
+  // function handleSubmit(User){
+  //   if(this.form.$invalid) return false;
+  //
+  //   User.create(this.newPlace)
+  //     .this(() => $state.go('home'));
+  // }
 
   function authenticate(provider) {
     $auth.authenticate(provider)
@@ -15,6 +22,7 @@ function LoginCtrl($auth, $state) {
 
   this.handleLogin = handleLogin;
   this.authenticate = authenticate;
+  // this.handleSubmit = handleSubmit;
 }
 
 

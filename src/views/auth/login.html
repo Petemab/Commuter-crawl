@@ -1,12 +1,20 @@
-<form ng-submit="login.handleLogin()">
+
+<form name="login.form" ng-submit="login.handleLogin()" novalidate>
   <div class="field">
     <label for="email">Email</label>
-    <input class="input" placeholder="Email" name="email" ng-model="login.data.email" />
+    <input class="input" placeholder="Email" name="email" ng-model="login.data.email" required />
+    <div ng-if="login.form.email.$touched || login.form.$submitted">
+      <small ng-if="login.form.email.$error.required">This field is required</small>
   </div>
+</div>
   <div class="field">
     <label for="password">Password</label>
-    <input class="input" type="password" placeholder="Password" name="password" ng-model="login.data.password" />
-  </div>
+    <input class="input" type="password" placeholder="Password" name="password" ng-model="login.data.password" required />
+    <div ng-if="login.form.password.$touched || login.form.$submitted">
+    <small ng-if="login.form.password.$error.required">This field is required</small>
+    </div>
+    </div>
+
 
   <button class="button is-primary">Submit</button>
 </form>
