@@ -16,6 +16,12 @@ function CrawlsNewCtrl(Crawl, $state, $scope, $http) {
 
   }
 
+  function handleSubmit() {
+    if(vm.form.$invalid) return false;
+    Crawl.create(vm.data)
+      .then(() => $state.go('crawlsShow'));
+  }
+
   function getStations(lineId) {
     if(!lineId) return false;
     $http
@@ -62,6 +68,7 @@ function CrawlsNewCtrl(Crawl, $state, $scope, $http) {
   vm.addBar = addBar;
   vm.getBars = getBars;
   vm.handleCreate = handleCreate;
+  vm.handleSubmit = handleSubmit;
   $scope.$watch(() => vm.data.tubeLine, () => getStations(vm.data.tubeLine));
   vm.getCrawlStations = getCrawlStations;
 }

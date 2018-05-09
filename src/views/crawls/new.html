@@ -72,7 +72,7 @@
 
   <!-- ng-submit="crawlsNew.handleCreate()" -->
 </form>
-
+<form ng-submit="crawlsNew.handleSubmit()">
 <div g-map center="{ lat: 51.515, lng: -0.078 }" class="map" ng-if="crawlsNew.showMap" stations="crawlsNew.crawlStations" get-bars="crawlsNew.getBars(bars)" bars="crawlsNew.bars" add-bar="crawlsNew.addBar(bar)">
 
 </div>
@@ -91,7 +91,10 @@
       <li><img src="{{ pub.image }}"></li>
     </ul>
   </div>
+  <input type="submit">
 </section>
+
+</form>
 
 
 
