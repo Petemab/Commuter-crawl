@@ -6,14 +6,15 @@
 
   <title>WDI32 Group Project</title>
 </head>
-<body>
+<body ng-controller="MainCtrl as main">
   <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="nav-item" ui-sref="home"><h1 id="nav-title" class="title is-1">Pub Crawl Planner</h1></a>
         </div>
         <div class="navbar-end">
-          <a ui-sref="login" class="nav-item">Login</a>
-          <a ui-sref="register" class="nav-item">Sign up</a>
+          <a class="navbar-item" ng-click="main.logout()" ng-if="main.isAuthenticated()">Logout</a>
+          <a class="navbar-item" ng-if="!main.isAuthenticated()" ui-sref="login">Login</a>
+          <a class="navbar-item" ng-if="!main.isAuthenticated()" ui-sref="register">Sign up</a>
         </div>
   </nav>
 
