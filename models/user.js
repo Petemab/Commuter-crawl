@@ -3,8 +3,8 @@ const bcrypt = require('bcrypt');
 mongoose.Promise = require('bluebird');
 
 const userSchema = new mongoose.Schema({
-  username: { type: String, required: true },
-  email: { type: String, unique: true },
+  username: { type: String, required: true, min: 5 },
+  email: { type: String, required: true, unique: true },
   password: { type: String }
 });
 

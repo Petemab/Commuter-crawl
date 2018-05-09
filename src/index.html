@@ -13,6 +13,7 @@
       </div>
       <div class="navbar-end">
         <a class="navbar-item" ng-click="main.logout()" ng-if="main.isAuthenticated()">Logout</a>
+        <a class="navbar-item" ng-if="main.isAuthenticated()" ui-sref="crawlsNew">Create Crawl</a>
         <a class="navbar-item" ng-if="!main.isAuthenticated()" ui-sref="login">Login</a>
         <a class="navbar-item" ng-if="!main.isAuthenticated()" ui-sref="register">Sign up</a>
       </div>
