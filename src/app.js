@@ -13,7 +13,7 @@ import Router from './config/router';
 import Auth from './config/auth';
 
 
-
+import MainCtrl from './controllers/main';
 import CrawlsShowCtrl from './controllers/crawls/show';
 import CrawlsNewCtrl from './controllers/crawls/new';
 import CrawlsEditCtrl from './controllers/crawls/edit';
@@ -31,6 +31,7 @@ import Crawl from './models/crawl';
 angular.module('crawls', ['ui.router', 'satellizer', 'ngMessages'])
   .config(Router)
   .config(Auth)
+  .controller('MainCtrl', MainCtrl)
   .controller('StationsIndexCtrl', StationsIndexCtrl)
   .controller('CrawlsShowCtrl', CrawlsShowCtrl)
   .controller('CrawlsEditCtrl', CrawlsEditCtrl)

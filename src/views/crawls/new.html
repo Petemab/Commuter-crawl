@@ -1,4 +1,4 @@
-<pre>{{ crawlsNew.data | json }}</pre>
+<!-- <pre>{{ crawlsNew.data | json }}</pre> -->
 <form name="crawlsNew.form" ng-if="!crawlsNew.showMap" novalidate>
   <div class="field">
     <label for="name">Name</label>
@@ -73,7 +73,7 @@
   <!-- ng-submit="crawlsNew.handleCreate()" -->
 </form>
 
-<div g-map center="{ lat: 51.515, lng: -0.078 }" class="map" ng-if="crawlsNew.showMap" stations="crawlsNew.crawlStations" get-bars="crawlsNew.getBars(bars)">
+<div g-map center="{ lat: 51.515, lng: -0.078 }" class="map" ng-if="crawlsNew.showMap" stations="crawlsNew.crawlStations" get-bars="crawlsNew.getBars(bars)" bars="crawlsNew.bars">
 
 </div>
 <ul>

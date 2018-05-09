@@ -2,6 +2,11 @@ Router.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 function Router($stateProvider, $urlRouterProvider){
   $stateProvider
+    .state({
+      name: 'home',
+      url: '/',
+      templateUrl: 'views/home.html'
+    })
     .state('crawlsShow', {
       url: '/crawls/:id',
       templateUrl: 'views/crawls/show.html',
