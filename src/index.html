@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html ng-app="crawls">
-<head>
-  <meta charset="utf-8">
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPr7S7RyMxHqqWsRNkhhDL5-tOIZ2c2QU&libraries=places"></script>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPr7S7RyMxHqqWsRNkhhDL5-tOIZ2c2QU&libraries=places"></script>
+    <title>WDI33 Group Project</title>
+  </head>
+  <body ng-controller="MainCtrl as main">
 
-  <title>WDI32 Group Project</title>
-</head>
-<body ng-controller="MainCtrl as main">
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="nav-item" ui-sref="home"><h1 id="nav-title" class="title is-1">Pub Crawl Planner</h1></a>
-        </div>
-        <div class="navbar-end">
-          <a class="navbar-item" ng-click="main.logout()" ng-if="main.isAuthenticated()">Logout</a>
-          <a class="navbar-item" ng-if="!main.isAuthenticated()" ui-sref="login">Login</a>
-          <a class="navbar-item" ng-if="!main.isAuthenticated()" ui-sref="register">Sign up</a>
-        </div>
-  </nav>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="nav-item" ui-sref="home"><h1 id="nav-title" class="title is-1">Pub Crawl Planner</h1></a>
+      </div>
+      <div class="navbar-end">
+        <a class="navbar-item" ng-click="main.logout()" ng-if="main.isAuthenticated()">Logout</a>
+        <a class="navbar-item" ng-if="!main.isAuthenticated()" ui-sref="login">Login</a>
+        <a class="navbar-item" ng-if="!main.isAuthenticated()" ui-sref="register">Sign up</a>
+      </div>
+    </nav>
 
-  <h1>WDI32 Group Project</h1>
-<div class="container" ui-view></div>
-
+    <div class="container" ui-view></div>
+  </body>
 </html>
