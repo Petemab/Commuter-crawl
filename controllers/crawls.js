@@ -1,5 +1,13 @@
 const Crawl = require('../models/crawl');
 
+function crawlsIndex(req, res, next){
+  Crawl
+    .find()
+    .exec()
+    .then(crawls => res.json(crawls))
+    .catch(next);
+}
+
 function crawlsCreate(req, res, next){
 // (createdBy property automatically becomes current user)
 //  req.body.createdBy = req.currentUser
@@ -46,6 +54,7 @@ function crawlsDelete(req, res, next){
 }
 
 module.exports = {
+  index: crawlsIndex,
   create: crawlsCreate,
   show: crawlsShow,
   update: crawlsUpdate,

@@ -3,6 +3,7 @@ const crawls = require('../controllers/crawls');
 const auth = require('../controllers/auth');
 
 router.route('/crawls')
+  .get(crawls.index)
   .post(crawls.create);
 
 router.route('/crawls/:id')
