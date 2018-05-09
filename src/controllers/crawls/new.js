@@ -45,9 +45,7 @@ function CrawlsNewCtrl(Crawl, $state, $scope, $http) {
     } else {
       vm.crawlStations = vm.stations.slice(endIndex, startIndex +1);
     }
-
     vm.showMap = true;
-
   }
   function getBars(bars){
     vm.bars = bars;

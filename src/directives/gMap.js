@@ -20,14 +20,15 @@ function gMap() {
       const placesService = new google.maps.places.PlacesService(map);
 
       let markers = [];
-      // let pubMarkers = [];
+      let pubMarkers = [];
+      let bars = [];
 
       $scope.$watch('center', () => {
         map.setCenter($scope.center);
       });
 
       $scope.$watch('stations', () => {
-        console.log($scope.stations);
+        // console.log($scope.stations);
         markers.forEach(marker => marker.setMap(null));
         markers = $scope.stations.map(station => {
           const marker = new google.maps.Marker({
@@ -37,18 +38,23 @@ function gMap() {
 
           marker.addListener('click', () => {
             console.log(station.name);
-            console.log(station.location.lat);
+            // console.log(station.location.lat);
             placesService.nearbySearch({
               location: marker.getPosition(),
               radius: 500,
               type: ['bar']
             }, (results) => {
+
               $scope.getBars({ bars: results });
-              // const pubMarker = new google.maps.Marker({
-              //    position: bars.location,
-              //    map
-              //  });
-              // console.log(results);
+              // this.bars.forEach(pubMarker => pubMarker.setMap(null));
+              bars = $scope.bars.map(bar => {
+                const pubMarker = new google.maps.Marker({
+                  position: bar.location,
+                  map
+                });
+                console.log(pubMarker);
+                return pubMarker;
+              });
               // let bars = results;
               // pubMarkers.forEach(marker => marker.setMap(null));
               // pubMarkers = $scope.bars.map(bar => {

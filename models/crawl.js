@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const crawlSchema = new mongoose.Schema({
   name: { type: String },
-  date: { type: Date },
+  date: { type: String },
   line: { type: String },
   start: { type: String },
   end: { type: String },
