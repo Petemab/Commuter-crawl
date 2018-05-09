@@ -20,55 +20,50 @@ function gMap() {
       const placesService = new google.maps.places.PlacesService(map);
 
       let markers = [];
-      let pubMarkers = [];
-      let bars = [];
-
+      const infowindow = new google.maps.InfoWindow();
       $scope.$watch('center', () => {
         map.setCenter($scope.center);
       });
 
       $scope.$watch('stations', () => {
-        // console.log($scope.stations);
         markers.forEach(marker => marker.setMap(null));
         markers = $scope.stations.map(station => {
           const marker = new google.maps.Marker({
             position: station.location,
             map
           });
-
           marker.addListener('click', () => {
-            console.log(station.name);
-            // console.log(station.location.lat);
+            // infowindow.setContent('<div><strong>' + station.name + '</strong><br>');
+            // infowindow.open(map, marker);
             placesService.nearbySearch({
               location: marker.getPosition(),
               radius: 500,
               type: ['bar']
             }, (results) => {
-
               $scope.getBars({ bars: results });
-              // this.bars.forEach(pubMarker => pubMarker.setMap(null));
-              bars = $scope.bars.map(bar => {
-                const pubMarker = new google.maps.Marker({
-                  position: bar.location,
+              markers = $scope.bars.map(bar => {
+                const marker = new google.maps.Marker({
+                  position: bar.geometry.location,
                   map
+                  // icon: 'https://image.flaticon.com/icons/svg/8/8136.svg'
                 });
-                console.log(pubMarker);
-                return pubMarker;
+                marker.addListener('click', () => {
+                  infowindow.setContent(
+                    '<div><strong>'
+                    + bar.name +
+                    '</strong><br><p>'
+                    + bar.vicinity + '</p></div>');
+                  infowindow.open(map, marker);
+                });
               });
-              // let bars = results;
-              // pubMarkers.forEach(marker => marker.setMap(null));
-              // pubMarkers = $scope.bars.map(bar => {
-              //   const pubMarker = new google.maps.Marker({
-              //     position: bar.location,
-              //     map
-              //   });
-              //   // return pubMarker;
-              // });
+              console.log(results);
             });
           });
           return marker;
         });
       });
+
+
     }
   };
 }
