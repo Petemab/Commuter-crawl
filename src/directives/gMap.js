@@ -45,7 +45,7 @@ function gMap() {
                 const marker = new google.maps.Marker({
                   position: bar.geometry.location,
                   map
-                  // icon: 'https://image.flaticon.com/icons/svg/8/8136.svg'
+                  // icon: <i class="fas fa-beer"></i>
                 });
                 marker.addListener('click', () => {
                   infowindow.setContent(
@@ -56,7 +56,7 @@ function gMap() {
                   infowindow.open(map, marker);
                 });
               });
-              console.log(results);
+              // console.log(results);
             });
           });
           return marker;

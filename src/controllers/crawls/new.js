@@ -50,6 +50,7 @@ function CrawlsNewCtrl(Crawl, $state, $scope, $http) {
   function getBars(bars){
     vm.bars = bars;
     $scope.$apply();
+    console.log(bars);
   }
   vm.getBars = getBars;
   vm.handleCreate = handleCreate;
