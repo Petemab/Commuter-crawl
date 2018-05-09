@@ -40,7 +40,7 @@ function gMap() {
             console.log(station.location.lat);
             placesService.nearbySearch({
               location: marker.getPosition(),
-              radius: 750,
+              radius: 500,
               type: ['bar']
             }, (results) => {
               $scope.getBars({ bars: results });
@@ -48,7 +48,7 @@ function gMap() {
               //    position: bars.location,
               //    map
               //  });
-              console.log(results);
+              // console.log(results);
               // let bars = results;
               // pubMarkers.forEach(marker => marker.setMap(null));
               // pubMarkers = $scope.bars.map(bar => {

@@ -42,14 +42,12 @@ function CrawlsNewCtrl(Crawl, $state, $scope, $http) {
 
     if(endIndex > startIndex) {
       vm.crawlStations = vm.stations.slice(startIndex, endIndex +1);
-      console.log(vm.crawlStations);
     } else {
       vm.crawlStations = vm.stations.slice(endIndex, startIndex +1);
-      console.log(vm.crawlStations);
     }
-    console.log('before showmap variable', vm.showMap);
+
     vm.showMap = true;
-    console.log('after showmap variable', vm.showMap);
+
   }
   function getBars(bars){
     vm.bars = bars;
