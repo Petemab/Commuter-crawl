@@ -1,7 +1,9 @@
 CrawlsNewCtrl.$inject = ['Crawl', '$state', '$scope', '$http'];
 function CrawlsNewCtrl(Crawl, $state, $scope, $http) {
   const vm = this;
-  vm.data = {};
+  vm.data = {
+    pubs: []
+  };
   vm.stations = [];
   vm.bars = [];
   vm.showMap = false;
@@ -51,6 +53,12 @@ function CrawlsNewCtrl(Crawl, $state, $scope, $http) {
     vm.bars = bars;
     $scope.$apply();
   }
+
+  function addBar(bar) {
+    console.log('add bar ----------->', bar);
+    vm.data.pubs.push(bar);
+  }
+  vm.addBar = addBar;
   vm.getBars = getBars;
   vm.handleCreate = handleCreate;
   $scope.$watch(() => vm.data.tubeLine, () => getStations(vm.data.tubeLine));

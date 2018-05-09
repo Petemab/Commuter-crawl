@@ -8,7 +8,8 @@ function gMap() {
       center: '=',
       stations: '=',
       bars: '=',
-      getBars: '&'
+      getBars: '&',
+      addBar: '&'
     },
     link($scope, $element) {
 
@@ -40,10 +41,19 @@ function gMap() {
               radius: 500,
               type: ['bar']
             }, (results) => {
-              $scope.getBars({ bars: results });
+              const cleanedResults = results.map(bar => {
+                return {
+                  name: bar.name,
+                  address: bar.vicinity,
+                  location: bar.geometry.location.toJSON(),
+                  image: bar.photos ? bar.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100}) : null
+                };
+              });
+
+              $scope.getBars({ bars: cleanedResults });
               markers = $scope.bars.map(bar => {
                 const marker = new google.maps.Marker({
-                  position: bar.geometry.location,
+                  position: bar.location,
                   map
                   // icon: 'https://image.flaticon.com/icons/svg/8/8136.svg'
                 });
@@ -52,8 +62,11 @@ function gMap() {
                     '<div><strong>'
                     + bar.name +
                     '</strong><br><p>'
-                    + bar.vicinity + '</p></div>');
+                    + bar.address + '</p></div>');
                   infowindow.open(map, marker);
+
+                  $scope.addBar({ bar: bar });
+                  $scope.$apply();
                 });
               });
               console.log(results);

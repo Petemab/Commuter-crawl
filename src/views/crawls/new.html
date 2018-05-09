@@ -73,14 +73,35 @@
   <!-- ng-submit="crawlsNew.handleCreate()" -->
 </form>
 
-<div g-map center="{ lat: 51.515, lng: -0.078 }" class="map" ng-if="crawlsNew.showMap" stations="crawlsNew.crawlStations" get-bars="crawlsNew.getBars(bars)" bars="crawlsNew.bars">
+<div g-map center="{ lat: 51.515, lng: -0.078 }" class="map" ng-if="crawlsNew.showMap" stations="crawlsNew.crawlStations" get-bars="crawlsNew.getBars(bars)" bars="crawlsNew.bars" add-bar="crawlsNew.addBar(bar)">
 
 </div>
-<ul>
-  <li ng-repeat="bar in crawlsNew.bars"><a ng-click="showDetails = ! showDetails">{{ bar.name }}</a>
-  <div class="bar-details" ng-show="showDetails">
-    <p>Address: {{ bar.vicinity}}</p>
-    <p>{{ bar.geometry.location }}</p>
-    <img class="show-image" ng-url="">{{ bar.photos[0].getUrl({ 'maxWidth': 100, 'maxHeight': 100 }); }}</img>
+
+<section ng-if="crawlsNew.showMap">
+  <h2>Itinerary</h2>
+  <h1>{{ crawlsNew.data.name }}</h1>
+  <p>Date: {{ crawlsNew.data.date }}</p>
+  <p>Line: {{ crawlsNew.data.tubeLine }}</p>
+  <p>Start Station: {{ crawlsNew.data.startPoint.name }}</p>
+  <p>End Station: {{ crawlsNew.data.endPoint.name }}</p>
+  <div class="bar-info" ng-repeat="pub in crawlsNew.data.pubs">
+    <ul>
+      <li>{{ pub.name }}</li>
+      <li>{{ pub.address }}</li>
+      <li><img src="{{ pub.image }}"></li>
+    </ul>
   </div>
+</section>
+
+
+
+
+<ul>
+  <li ng-repeat="bar in crawlsNew.bars">
+    <a ng-click="crawlsNew.addBar(bar)">{{ bar.name }}</a>
+    <div class="bar-details" ng-show="showDetails">
+      <p>Address: {{ bar.vicinity}}</p>
+      <p>{{ bar.geometry.location }}</p>
+    </div>
+  </li>
 </ul>
