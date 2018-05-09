@@ -6,6 +6,7 @@ import './scss/style.scss';
 //3rd party dependencies
 import '@uirouter/angularjs';
 import 'satellizer';
+import 'angular-messages';
 
 //our modules
 import Router from './config/router';
@@ -27,7 +28,7 @@ import Crawl from './models/crawl';
 
 
 
-angular.module('crawls', ['ui.router', 'satellizer'])
+angular.module('crawls', ['ui.router', 'satellizer', 'ngMessages'])
   .config(Router)
   .config(Auth)
   .controller('MainCtrl', MainCtrl)
