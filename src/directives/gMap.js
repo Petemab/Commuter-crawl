@@ -20,7 +20,7 @@ function gMap() {
       const placesService = new google.maps.places.PlacesService(map);
 
       let markers = [];
-      let pubMarkers = [];
+      // let pubMarkers = [];
 
       $scope.$watch('center', () => {
         map.setCenter($scope.center);
@@ -44,16 +44,20 @@ function gMap() {
               type: ['bar']
             }, (results) => {
               $scope.getBars({ bars: results });
+              // const pubMarker = new google.maps.Marker({
+              //    position: bars.location,
+              //    map
+              //  });
               console.log(results);
-              let bars = results;
-              pubMarkers.forEach(marker => marker.setMap(null));
-              pubMarkers = $scope.bars.map(bar => {
-                const pubMarker = new google.maps.Marker({
-                  position: bar.location,
-                  map
-                });
-                return pubMarker;
-              });
+              // let bars = results;
+              // pubMarkers.forEach(marker => marker.setMap(null));
+              // pubMarkers = $scope.bars.map(bar => {
+              //   const pubMarker = new google.maps.Marker({
+              //     position: bar.location,
+              //     map
+              //   });
+              //   // return pubMarker;
+              // });
             });
           });
           return marker;
