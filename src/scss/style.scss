@@ -2,8 +2,21 @@
 
 @import '~bulma';
 
+.bar-info {
+  padding: 10px 0;
+}
+
+.card {
+  height: 250px;
+  width: 300px;
+}
+
 .columns {
   padding-top: 60px;
+}
+
+.card-content {
+  padding: 14px 14px;
 }
 
 .map {
@@ -19,3 +32,6 @@ form {
 @import 'navbar';
 
 @import 'footer';
+
+@import 'login';
+@import 'registration';
