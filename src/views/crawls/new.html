@@ -68,7 +68,7 @@
   </div>
 
 
-  <button class="button is-primary" ng-click="crawlsNew.getCrawlStations()">Continue</button>
+  <button ng-if="crawlsNew.data.name && crawlsNew.data.date && crawlsNew.data.startPoint && crawlsNew.data.endPoint" class="button is-primary" ng-click="crawlsNew.getCrawlStations()">Continue</button>
 
   <!-- ng-submit="crawlsNew.handleCreate()" -->
 </form>
@@ -89,7 +89,7 @@
       <li><img ng-src="{{ pub.image }}"></li>
     </ul>
   </div>
-  <button ng-click="crawlsNew.handleCreate()">Save Crawl</button>
+  <button class="button is-primary" ng-click="crawlsNew.handleCreate()">Save Crawl</button>
 </section>
 
 
@@ -97,7 +97,7 @@
 
 <ul>
   <li ng-repeat="bar in crawlsNew.bars">
-    <a ng-click="crawlsNew.addBar(bar)">{{ bar.name }}</a>
+    <a class="disable-pubs" ng-click="crawlsNew.addBar(bar)">{{ bar.name }}</a>
     <div class="bar-details" ng-show="showDetails">
       <p>Address: {{ bar.vicinity}}</p>
       <p>{{ bar.geometry.location }}</p>
