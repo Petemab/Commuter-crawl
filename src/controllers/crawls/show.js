@@ -9,7 +9,7 @@ function CrawlsShowCtrl(Crawl, $state) {
 
   function handleDelete() {
     Crawl.removeById($state.params.id)
-      .then(() => $state.go('/'));
+      .then(() => $state.go('home'));
     // need to add the location to go to
   }
   this.handleDelete = handleDelete;

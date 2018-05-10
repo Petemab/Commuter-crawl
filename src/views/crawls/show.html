@@ -14,10 +14,10 @@
           <p class="title is-5">You'll be crawling on the {{ crawlsShow.crawl.tubeLine}} line!</p>
           <p class="title is-6">You'll start your crawl at {{ crawlsShow.crawl.startPoint.name}} tube station</p>
           <p class="title is-6">Your crawl will end at {{ crawlsShow.crawl.endPoint.name }} tube station</p>
+          <p class="title is-6">Not happy with your crawl? <a ui-sref="crawlsNew"> Click here to start over!</a> </p>
         </div>
       </div>
       <div class="show-buttons has-text-centered">
-        <a ui-sref="crawlsEdit({ id: crawlsShow.crawl._id })" class="button is-primary">Edit Crawl</a>
         <button ng-click="crawlsShow.handleDelete()" class="button">Delete Crawl</button>
       </div>
 
