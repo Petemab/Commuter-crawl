@@ -1,14 +1,14 @@
 <form name="register.form" ng-submit="register.handleRegister()" novalidate>
   <div class="field">
-    <label for="username">Username</label>
-    <input class="input" placeholder="Username" name="username" ng-model="register.data.username" required />
+    <label for="username"></label>
+    <input class="input is-rounded is-info" placeholder="Username" name="username" ng-model="register.data.username" required />
     <div ng-if="register.form.username.$touched || register.form.$submitted">
       <small ng-if="register.form.username.$error.required">This field is required</small>
    </div>
   </div>
   <div class="field">
-    <label for="email">Email</label>
-    <input class="input" placeholder="Email" name="email" ng-model="register.data.email" required />
+    <label for="email"></label>
+    <input class="input is-rounded is-info" placeholder="Email" name="email" ng-model="register.data.email" required />
     <div ng-if="register.form.email.$touched || register.form.$submitted">
       <small ng-if="register.form.email.$error.required">This field is required</small>
     </div>
@@ -16,20 +16,21 @@
   </div>
 
   <div class="field">
-    <label for="password">Password</label>
-    <input class="input" type="password" placeholder="Password" name="password" ng-model="register.data.password" required />
+    <label for="password"></label>
+    <input class="input is-rounded is-info" type="password" placeholder="Password" name="password" ng-model="register.data.password" required />
     <!-- <div ng-messages="register.form.password.$error"  -->
     <div ng-if="register.form.password.$touched || register.form.$submitted">
     <small ng-if="register.form.password.$error.required">This field is required</small>
     <!-- <div ng-if="minlength">Minimum 8 characters </div> -->
   </div>
+</div>
   <div class="field">
-    <label for="passwordConfirmation">Password Confirmation</label>
-    <input class="input" type="password" placeholder="Password Confirmation" name="passwordConfirmation" ng-model="register.data.passwordConfirmation" required />
+    <label for="passwordConfirmation"></label>
+    <input class="input is-rounded is-info" type="password" placeholder="Password Confirmation" name="passwordConfirmation" ng-model="register.data.passwordConfirmation" required />
     <div ng-if="register.form.passwordConfirmation.$touched || register.form.$submitted"></div>
     <small ng-if="register.form.passwordConfirmation.$error.required">This field is required</small>
 
   </div>
 
-  <button class="button is-warning">Submit</button>
+  <button class="button is-rounded is-success is-outlined">Submit</button>
 </form>
