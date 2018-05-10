@@ -1,6 +1,7 @@
 <p ng-if="login.data.error">{{ login.data.error }}</p>
 
 <form name="login.form" ng-submit="login.handleLogin()" novalidate>
+
   <div class="field">
     <label for="email">Email</label>
     <input class="input" placeholder="Email" name="email" ng-model="login.data.email" required />
@@ -15,6 +16,7 @@
       <small ng-if="login.form.password.$error.required">This field is required</small>
     </div>
   </div>
+
 
 
   <button class="button is-primary">Submit</button>

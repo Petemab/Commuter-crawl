@@ -47,6 +47,7 @@ function CrawlsNewCtrl(Crawl, $state, $scope, $http) {
     }
     vm.showMap = true;
   }
+
   function getBars(bars){
     vm.bars = bars;
     $scope.$apply();
@@ -57,6 +58,7 @@ function CrawlsNewCtrl(Crawl, $state, $scope, $http) {
     console.log('add bar ----------->', bar);
     vm.data.pubs.push(bar);
   }
+
   vm.addBar = addBar;
   vm.getBars = getBars;
   vm.handleCreate = handleCreate;

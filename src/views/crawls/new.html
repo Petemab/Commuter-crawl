@@ -1,4 +1,4 @@
-<pre>{{ crawlsNew.data | json }}</pre>
+<!-- <pre>{{ crawlsNew.data | json }}</pre> -->
 <form ng-if="!crawlsNew.showMap" novalidate>
   <div class="field">
     <label for="name">Name</label>
@@ -68,36 +68,41 @@
   </div>
 
 
-  <button class="button is-primary" ng-click="crawlsNew.getCrawlStations()">Continue</button>
+  <button ng-if="crawlsNew.data.name && crawlsNew.data.date && crawlsNew.data.startPoint && crawlsNew.data.endPoint" class="button is-primary" ng-click="crawlsNew.getCrawlStations()">Continue</button>
 
   <!-- ng-submit="crawlsNew.handleCreate()" -->
 </form>
-<div g-map center="{ lat: 51.515, lng: -0.078 }" class="map" ng-if="crawlsNew.showMap" stations="crawlsNew.crawlStations" get-bars="crawlsNew.getBars(bars)" bars="crawlsNew.bars" add-bar="crawlsNew.addBar(bar)">
-</div>
-
-<section ng-if="crawlsNew.showMap">
-  <h2>Itinerary</h2>
-  <h1>{{ crawlsNew.data.name }}</h1>
-  <p>Date: {{ crawlsNew.data.date }}</p>
-  <p>Line: {{ crawlsNew.data.tubeLine }}</p>
-  <p>Start Station: {{ crawlsNew.data.startPoint.name }}</p>
-  <p>End Station: {{ crawlsNew.data.endPoint.name }}</p>
-  <div class="bar-info" ng-repeat="pub in crawlsNew.data.pubs">
-    <ul>
-      <li>{{ pub.name }}</li>
-      <li>{{ pub.address }}</li>
-      <li><img ng-src="{{ pub.image }}"></li>
-    </ul>
+<div class="columns">
+  <div class="column">
+    <div g-map center="{ lat: 51.515, lng: -0.078 }" class="map" ng-if="crawlsNew.showMap" stations="crawlsNew.crawlStations" get-bars="crawlsNew.getBars(bars)" bars="crawlsNew.bars" add-bar="crawlsNew.addBar(bar)">
+    </div>
   </div>
-  <button ng-click="crawlsNew.handleCreate()">Save Crawl</button>
-</section>
 
+  <div class="column">
+    <section ng-if="crawlsNew.showMap">
+      <h2>Itinerary</h2>
+      <h1>{{ crawlsNew.data.name }}</h1>
+      <p>Date: {{ crawlsNew.data.date }}</p>
+      <p>Line: {{ crawlsNew.data.tubeLine }}</p>
+      <p>Start Station: {{ crawlsNew.data.startPoint.name }}</p>
+      <p>End Station: {{ crawlsNew.data.endPoint.name }}</p>
+      <div class="bar-info" ng-repeat="pub in crawlsNew.data.pubs">
+        <ul>
+          <li>{{ pub.name }}</li>
+          <li>{{ pub.address }}</li>
+          <li><img ng-src="{{ pub.image }}"></li>
+        </ul>
+      </div>
+      <button class="button is-primary" ng-click="crawlsNew.handleCreate()">Save Crawl</button>
+    </section>
+  </div>
+</div>
 
 
 
 <ul>
   <li ng-repeat="bar in crawlsNew.bars">
-    <a ng-click="crawlsNew.addBar(bar)">{{ bar.name }}</a>
+    <a class="disable-pubs" ng-click="crawlsNew.addBar(bar)">{{ bar.name }}</a>
     <div class="bar-details" ng-show="showDetails">
       <p>Address: {{ bar.vicinity}}</p>
       <p>{{ bar.geometry.location }}</p>
