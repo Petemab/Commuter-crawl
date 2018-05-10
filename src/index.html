@@ -7,35 +7,36 @@
     <title>WDI33 Group Project</title>
   </head>
   <body ng-controller="MainCtrl as main">
-
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="nav-item" ui-sref="home"><h1 id="nav-title" class="title is-1">Pub Crawl Planner</h1></a>
-        <a role="button" class="navbar-burger" ng-click="main.toggleNav()" ng-class="{ 'is-active': main.navBarIsOpen }" aria-label="menu" aria-expanded="false">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
+    <header>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="nav-item" ui-sref="home"><h1 id="nav-title" class="title is-1">Pub Crawl Planner</h1></a>
+          <a role="button" class="navbar-burger" ng-click="main.toggleNav()" ng-class="{ 'is-active': main.navBarIsOpen }" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="navbar-end navbar-menu" ng-class="{ 'is-active': main.navBarIsOpen }">
+          <a class="navbar-item" ng-click="main.logout()" ng-if="main.isAuthenticated()">Logout</a>
+          <a class="navbar-item" ng-if="main.isAuthenticated()" ui-sref="crawlsNew">Create Crawl</a>
+          <a class="navbar-item" ng-if="!main.isAuthenticated()" ui-sref="login">Login</a>
+          <a class="navbar-item" ng-if="!main.isAuthenticated()" ui-sref="register">Sign up</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container" ui-view></div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>
+            <strong>Pub Crawl Planner</strong> by <a href="https://github.com/Petemab"> Pete Bennet</a>,<a href="https://github.com/leonfiasco">Leon Boakye</a> & <a href="https://github.com/jcaruana09">James Caruana</a>. The website content
+            is licensed by <a href="https://generalassemb.ly/">GA</a>.
+          </p>
+        </div>
       </div>
-      <div class="navbar-end navbar-menu" ng-class="{ 'is-active': main.navBarIsOpen }">
-        <a class="navbar-item" ng-click="main.logout()" ng-if="main.isAuthenticated()">Logout</a>
-        <a class="navbar-item" ng-if="main.isAuthenticated()" ui-sref="crawlsNew">Create Crawl</a>
-        <a class="navbar-item" ng-if="!main.isAuthenticated()" ui-sref="login">Login</a>
-        <a class="navbar-item" ng-if="!main.isAuthenticated()" ui-sref="register">Sign up</a>
-      </div>
-    </nav>
-
-    <div class="container" ui-view></div>
-
+    </footer>
   </body>
-  <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <p>
-          <strong>Pub Crawl Planner</strong> by <a href="https://github.com/Petemab"> Pete Bennet</a>,<a href="https://github.com/leonfiasco">Leon Boakye</a> & <a href="https://github.com/jcaruana09">James Caruana</a>. The website content
-          is licensed by <a href="https://generalassemb.ly/">GA</a>.
-        </p>
-      </div>
-    </div>
-  </footer>
 </html>
