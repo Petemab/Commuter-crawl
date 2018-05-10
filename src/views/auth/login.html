@@ -6,29 +6,27 @@
 
       <div class="columns">
 
-        <div class="column is-one-third">
-
-        </div>
+        <div class="column is-one-third"></div>
 
         <div class="column is-one-third">
-          <div id="auth-card" class="card">
+          <div id="login-card" class="card">
             <div class="auth-card-content">
               <h1 class="is-size-1">Login</h1>
               <p class="is-size-7">Please enter your login details below</p>
               <div class="input-container">
 
-              <div class="field">
-                <input class="input is-rounded is-primary" placeholder="Email" name="email" ng-model="login.data.email" required />
-                <div ng-if="login.form.email.$touched || login.form.$submitted">
-                  <small ng-if="login.form.email.$error.required">This field is required</small>
+                <div class="field">
+                  <input class="input is-rounded is-primary" placeholder="Email" name="email" ng-model="login.data.email" required />
+                  <div ng-if="login.form.email.$touched || login.form.$submitted">
+                    <small ng-if="login.form.email.$error.required">This field is required</small>
+                  </div>
                 </div>
-              </div>
-              <div class="field">
-                <input class="input is-rounded is-primary" type="password" placeholder="Password" name="password" ng-model="login.data.password" required />
-                <div ng-if="login.form.password.$touched || login.form.$submitted">
-                  <small ng-if="login.form.password.$error.required">This field is required</small>
+                <div class="field">
+                  <input class="input is-rounded is-primary" type="password" placeholder="Password" name="password" ng-model="login.data.password" required />
+                  <div ng-if="login.form.password.$touched || login.form.$submitted">
+                    <small ng-if="login.form.password.$error.required">This field is required</small>
+                  </div>
                 </div>
-              </div>
 
               </div>
                 <!-- <footer class="card-footer"> -->
@@ -42,9 +40,7 @@
           </div>
         </div>
 
-        <div class="column is-one-third">
-
-        </div>
+        <div class="column is-one-third"></div>
 
       </div>
   </form>
