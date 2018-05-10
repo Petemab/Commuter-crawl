@@ -3,24 +3,37 @@
 
 <div class="container showContainer">
 
-  <div class="columns">
+  <div class="columns is-multiline">
 
-    <div g-maps-show center="crawlsShow.crawl.center" pubs="crawlsShow.crawl.pubs" class="showMap column is-half" ></div>
-    <div class="column is-half">
-  
-      <p class="title is-2 is-capitalized">{{ crawlsShow.crawl.name }}</p>
-      <p class="title is-4">{{ crawlsShow.crawl.date}}</p>
-      <p class="title is-5">You'll be crawling on the {{ crawlsShow.crawl.tubeLine}} line!</p>
-      <p class="title is-6">You'll start your crawl at {{ crawlsShow.crawl.startPoint.name}} tube station</p>
-      <p class="title is-6">Your crawl will end at {{ crawlsShow.crawl.endPoint.name }} tube station</p>
-      <ul>
-        <li ng-repeat="pub in crawlsShow.crawl.pubs"><a ng-click="showDetails = ! showDetails">{{ pub.name }}</a>
-        <div class="bar-details" ng-show="showDetails">
-          <p>Address: {{ pub.address }}</p>
-          <p>{{ pub.location }}</p>
-          <img class="show-image" ng-src="{{ pub.image }}">
+    <div g-maps-show center="crawlsShow.crawl.center" pubs="crawlsShow.crawl.pubs" class="showMap column is-two-thirds-desktop" ></div>
+    <div class="column">
+      <div class="card showCard">
+        <div class="crawl-info">
+          <p class="title is-2 is-capitalized">{{ crawlsShow.crawl.name }}</p>
+          <p class="title is-4">{{ crawlsShow.crawl.date}}</p>
+          <p class="title is-5">You'll be crawling on the {{ crawlsShow.crawl.tubeLine}} line!</p>
+          <p class="title is-6">You'll start your crawl at {{ crawlsShow.crawl.startPoint.name}} tube station</p>
+          <p class="title is-6">Your crawl will end at {{ crawlsShow.crawl.endPoint.name }} tube station</p>
         </div>
-      </ul>
+      </div>
     </div>
+    <div class="column is-one-third-desktop" ng-repeat="pub in crawlsShow.crawl.pubs">
+      <div class="card pub-card" >
+        <div class="card-image">
+          <figure class="image is-2by1">
+            <img ng-src="{{ pub.image }}" alt="Placeholder image">
+          </figure>
+          <p>Address: {{ pub.address }}</p>
+        </div>
+        <div class="card-content">
+          <div class="content">
+              <p class="is-size-6 has-text-weight-bold">{{ pub.name }}</p>
+              <p class="is-size-7 has-text-weight-semibold">Address: {{ pub.address }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a ui-sref="winesEdit({ id: winesShow.wine._id })" class="button is-primary">Edit</a>
+    <button ng-click="winesShow.handleDelete()" class="button">Delete</button>
   </div>
 </div>
