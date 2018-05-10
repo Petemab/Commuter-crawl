@@ -6,36 +6,18 @@
   <div class="columns">
     <div g-map center="{ lat: 51.515, lng: -0.078 }" class="map coloumn is-half" ></div>
     <div class="column is-half">
-        <h1>crawl name{{}}</h1>
-        <h3>date of crawl{{}}</h3>
+        <p class="title is-2">{{ crawlsShow.crawl.name }}</p>
+        <p class="title is-4">{{ crawlsShow.crawl.date}}</p>
+        <p class="title is-5">You'll be crawling on the {{ crawlsShow.crawl.line}} line!</p>
+        <p class="title is-6">You'll start your crawl at {{ crawlsShow.crawl.start}} tube station</p>
+        <p class="title is-6">Your crawl will end at {{ crawlsShow.crawl.end }} tube station</p>
+        <ul>
+          <li ng-repeat="pub in crawlsShow.crawl.bars"><a ng-click="showDetails = ! showDetails">{{ crawlsShow.crawl.pub.name }}</a>
+          <div class="bar-details" ng-show="showDetails">
+            <p>Address: {{ crawlsShow.crawl.pub.vicinity}}</p>
+
+            <img class="show-image" ng-url="">{{ bar.photos[0].getUrl({ 'maxWidth': 100, 'maxHeight': 100 }); }}</img>
+          </div>
+        </ul>
     </div>
   </div>
-
-
-
-
-
-
-  <!-- <div class="card">
-    <div class="card-content">
-      <p class="title">
-        “There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.”
-      </p>
-      <p class="subtitle">
-        Jeff Atwood
-      </p>
-    </div>
-    <footer class="card-footer">
-      <p class="card-footer-item">
-        <span>
-          View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
-        </span>
-      </p>
-      <p class="card-footer-item">
-        <span>
-          Share on <a href="#">Facebook</a>
-        </span>
-      </p>
-    </footer>
-  </div>
-</div> -->
