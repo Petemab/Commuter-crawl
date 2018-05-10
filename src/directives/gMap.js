@@ -55,7 +55,7 @@ function gMap() {
                 const marker = new google.maps.Marker({
                   position: bar.location,
                   map
-                  // icon: <i class="fas fa-beer"></i>
+                  // icon:
                 });
                 marker.addListener('click', () => {
                   infowindow.setContent(

@@ -4,7 +4,7 @@
 
 <div class="container">
   <div class="columns">
-    <div g-map center="{ lat: 51.515, lng: -0.078 }" class="map column is-half" ></div>
+    <div g-maps-show center="crawlsShow.crawl.center" pubs="crawlsShow.crawl.pubs" class="showMap column is-half" ></div>
     <div class="column is-half">
         <p class="title is-2">{{ crawlsShow.crawl.name }}</p>
         <p class="title is-4">{{ crawlsShow.crawl.date}}</p>
@@ -14,7 +14,8 @@
         <ul>
           <li ng-repeat="pub in crawlsShow.crawl.pubs"><a ng-click="showDetails = ! showDetails">{{ pub.name }}</a>
           <div class="bar-details" ng-show="showDetails">
-            <p>Address: pub.address}}</p>
+            <p>Address: {{ pub.address }}</p>
+            <p>{{ pub.location }}</p>
             <img class="show-image" ng-src="{{ pub.image }}">
           </div>
         </ul>

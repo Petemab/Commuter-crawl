@@ -1,4 +1,4 @@
-CrawlsShowCtrl.$inject = ['Crawl', '$state', '$http'];
+CrawlsShowCtrl.$inject = ['Crawl', '$state', '$http', '$scope'];
 
 function CrawlsShowCtrl(Crawl, $state) {
   this.crawl = {};

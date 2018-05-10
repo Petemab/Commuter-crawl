@@ -23,6 +23,7 @@ import LoginCtrl from './controllers/auth/login';
 
 //models
 import gMap from './directives/gMap.js';
+import gMapsShow from './directives/gMapsShow.js';
 import Crawl from './models/crawl';
 
 angular.module('crawls', ['ui.router', 'satellizer', 'ngMessages'])
@@ -35,4 +36,5 @@ angular.module('crawls', ['ui.router', 'satellizer', 'ngMessages'])
   .controller('RegisterCtrl', RegisterCtrl)
   .controller('LoginCtrl', LoginCtrl)
   .directive('gMap', gMap)
+  .directive('gMapsShow', gMapsShow)
   .service('Crawl', Crawl);
