@@ -72,26 +72,31 @@
 
   <!-- ng-submit="crawlsNew.handleCreate()" -->
 </form>
-<div g-map center="{ lat: 51.515, lng: -0.078 }" class="map" ng-if="crawlsNew.showMap" stations="crawlsNew.crawlStations" get-bars="crawlsNew.getBars(bars)" bars="crawlsNew.bars" add-bar="crawlsNew.addBar(bar)">
-</div>
-
-<section ng-if="crawlsNew.showMap">
-  <h2>Itinerary</h2>
-  <h1>{{ crawlsNew.data.name }}</h1>
-  <p>Date: {{ crawlsNew.data.date }}</p>
-  <p>Line: {{ crawlsNew.data.tubeLine }}</p>
-  <p>Start Station: {{ crawlsNew.data.startPoint.name }}</p>
-  <p>End Station: {{ crawlsNew.data.endPoint.name }}</p>
-  <div class="bar-info" ng-repeat="pub in crawlsNew.data.pubs">
-    <ul>
-      <li>{{ pub.name }}</li>
-      <li>{{ pub.address }}</li>
-      <li><img ng-src="{{ pub.image }}"></li>
-    </ul>
+<div class="columns">
+  <div class="column">
+    <div g-map center="{ lat: 51.515, lng: -0.078 }" class="map" ng-if="crawlsNew.showMap" stations="crawlsNew.crawlStations" get-bars="crawlsNew.getBars(bars)" bars="crawlsNew.bars" add-bar="crawlsNew.addBar(bar)">
+    </div>
   </div>
-  <button class="button is-primary" ng-click="crawlsNew.handleCreate()">Save Crawl</button>
-</section>
 
+  <div class="column">
+    <section ng-if="crawlsNew.showMap">
+      <h2>Itinerary</h2>
+      <h1>{{ crawlsNew.data.name }}</h1>
+      <p>Date: {{ crawlsNew.data.date }}</p>
+      <p>Line: {{ crawlsNew.data.tubeLine }}</p>
+      <p>Start Station: {{ crawlsNew.data.startPoint.name }}</p>
+      <p>End Station: {{ crawlsNew.data.endPoint.name }}</p>
+      <div class="bar-info" ng-repeat="pub in crawlsNew.data.pubs">
+        <ul>
+          <li>{{ pub.name }}</li>
+          <li>{{ pub.address }}</li>
+          <li><img ng-src="{{ pub.image }}"></li>
+        </ul>
+      </div>
+      <button class="button is-primary" ng-click="crawlsNew.handleCreate()">Save Crawl</button>
+    </section>
+  </div>
+</div>
 
 
 
