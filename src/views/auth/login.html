@@ -11,10 +11,11 @@
         </div>
 
         <div class="column is-one-third">
-          <div class="card">
-            <div class="card-content">
+          <div id="auth-card" class="card">
+            <div class="auth-card-content">
               <h1 class="is-size-1">Login</h1>
               <p class="is-size-7">Please enter your login details below</p>
+              <div class="input-container">
 
               <div class="field">
                 <input class="input is-rounded is-primary" placeholder="Email" name="email" ng-model="login.data.email" required />
@@ -23,19 +24,20 @@
                 </div>
               </div>
               <div class="field">
-
                 <input class="input is-rounded is-primary" type="password" placeholder="Password" name="password" ng-model="login.data.password" required />
                 <div ng-if="login.form.password.$touched || login.form.$submitted">
                   <small ng-if="login.form.password.$error.required">This field is required</small>
                 </div>
-                <footer class="card-footer">
-                  <p class="card-footer-item">
-                    <span>
-                      <button class="button is-rounded is-warning is-outlined">Submit</button>
-                    </span>
-                  </p>
-                </footer>
               </div>
+
+              </div>
+                <!-- <footer class="card-footer"> -->
+                  <!-- <p class="card-footer-item"> -->
+                    <!-- <span> -->
+                      <button id="login-button" class="button is-rounded is-warning is-outlined">Submit</button>
+                    <!-- </span> -->
+                  <!-- </p> -->
+                <!-- </footer> -->
             </div>
           </div>
         </div>

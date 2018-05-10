@@ -2,10 +2,23 @@
   width: 100%;
 }
 
+.input-container {
+  padding-top: 10px;
+}
+
 .background-container {
   background-image: url("https://i.imgur.com/xo8I8qT.jpg");
   height: calc(100vh - 132px);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.auth-card-content {
+  padding: 10px;
+}
+
+#login-button {
+  position: absolute;
+  bottom: 5px;
 }
