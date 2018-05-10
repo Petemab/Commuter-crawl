@@ -1,1 +1,119 @@
-<h1>Edit Page</h1>
+
+<form ng-submit="crawlsEdit.handleUpdate()" novalidate>
+  <!-- ng-if="!crawlsEdit.showMap"  -->
+  <div class="field">
+    <label for="name">Name</label>
+    <input class="input" placeholder="Name" name="name" ng-model="crawlsEdit.crawl.name" required />
+    <div ng-if="crawlsEdit.form.name.$touched || crawlsEdit.form.$submitted">
+      <small ng-if="crawlsEdit.form.name.$error.required">This field is required</small>
+    </div>
+  </div>
+  <div class="field">
+    <label for="date">Date</label>
+    <input class="input" type="date" name="date" ng-model="crawlsEdit.crawl.date" required />
+    <div ng-if="crawlsEdit.form.date.$touched || crawlsEdit.form.$submitted">
+      <small ng-if="crawlsEdit.form.date.$error.required">This field is required</small>
+    </div>
+  </div>
+  <div class="field">
+    <label for="tubeLine">Tube Line</label>
+    <div class="control">
+      <div class="select">
+        <select name="tubeLine" ng-model="crawlsEdit.crawl.tubeLine">
+          <option value="" selected disabled>Tube Line</option>
+          <option value="bakerloo">Bakerloo</option>
+          <option value="central">Central</option>
+          <option value="circle">Circle</option>
+          <option value="district">District</option>
+          <option value="hammersmith-city">Hammersmith and City</option>
+          <option value="jubilee">Jubilee</option>
+          <option value="metropolitan">Metropolitan</option>
+          <option value="northern">Northern</option>
+          <option value="piccadilly">Piccadilly</option>
+          <option value="victoria">Victoria</option>
+          <option value="waterloo-city">Waterloo and City</option>
+        </select>
+      </div>
+    </div>
+    <div ng-if="crawlsEdit.form.tubeLine.$touched || crawlsEdit.form.$submitted">
+      <small ng-if="crawlsEdit.form.tubeLine.$error.required">This field is required</small>
+    </div>
+  </div>
+  <div class="field" ng-if="crawlsEdit.stations.length > 0">
+    <label for="startPoint">Start Point</label>
+    <div class="control">
+      <div class="select">
+        <select name="startPoint" ng-model="crawlsEdit.crawl.startPoint">
+          <option value="" selected disabled>Start Point</option>
+          <option ng-value="station" ng-repeat="station in crawlsEdit.stations">{{ station.name }}</option>
+        </select>
+      </div>
+    </div>
+    <div ng-if="crawlsEdit.form.startPoint.$touched || crawlsEdit.form.$submitted">
+      <small ng-if="crawlsEdit.form.startPoint.$error.required">This field is required</small>
+    </div>
+  </div>
+  <div class="field" ng-if="crawlsEdit.stations.length > 0">
+    <label for="endPoint">End Point</label>
+    <div class="control">
+      <div class="select">
+        <select name="endPoint" ng-model="crawlsEdit.crawl.endPoint">
+          <option value="" selected disabled>End Point</option>
+          <option ng-value="station" ng-repeat="station in crawlsEdit.stations">{{ station.name }}</option>
+        </select>
+      </div>
+    </div>
+    <div ng-if="crawlsEdit.form.endPoint.$touched || crawlsEdit.form.$submitted">
+      <small ng-if="crawlsEdit.form.endPoint.$error.required">This field is required</small>
+    </div>
+  </div>
+
+
+  <button ng-if="crawlsEdit.crawl.name && crawlsEdit.crawl.date && crawlsEdit.crawl.startPoint && crawlsEdit.crawl.endPoint" class="button is-primary" ng-click="crawlsEdit.getCrawlStations()">Continue</button>
+
+  <!-- ng-submit="crawlsEdit.handleCreate()" -->
+</form>
+<div class="columns">
+  <div class="column">
+    <div g-map center="crawlsEdit.crawl.center" class="map" ng-if="crawlsEdit.showMap" stations="crawlsEdit.crawlStations" get-bars="crawlsEdit.getBars(bars)" bars="crawlsEdit.bars" add-bar="crawlsEdit.addBar(bar)">
+    </div>
+  </div>
+
+  <div class="column">
+    <section ng-if="crawlsEdit.showMap">
+      <p class="has-text-weight-bold is-capitalized is-size-2">{{ crawlsEdit.crawl.name }}</p>
+      <p class="is-size-5">Date: {{ crawlsEdit.crawl.date }}</p>
+      <p class="has-text-weight-semibold is-capitalized is-size-4">{{ crawlsEdit.crawl.tubeLine }} line</p>
+      <p class="is-size-5">Start Station: {{ crawlsEdit.crawl.startPoint.name }}</p>
+      <p class="is-size-5">End Station: {{ crawlsEdit.crawl.endPoint.name }}</p>
+
+      <div class="bar-info" ng-repeat="pub in crawlsEdit.crawl.pubs">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-2by1">
+              <img ng-src="{{ pub.image }}" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+                <p class="is-size-6 has-text-weight-bold">{{ pub.name }}</p>
+                <p class="is-size-7 has-text-weight-semibold">Address: {{ pub.address }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="button is-primary">Update Crawl</button>
+    </section>
+  </div>
+</div>
+
+<ul>
+  <li ng-repeat="bar in crawlsEdit.bars">
+    <a class="disable-pubs" ng-click="crawlsEdit.addBar(bar)">{{ bar.name }}</a>
+    <div class="bar-details" ng-show="showDetails">
+      <p>Address: {{ bar.vicinity}}</p>
+      <p>{{ bar.geometry.location }}</p>
+    </div>
+  </li>
+</ul>

@@ -16,6 +16,11 @@
           <p class="title is-6">Your crawl will end at {{ crawlsShow.crawl.endPoint.name }} tube station</p>
         </div>
       </div>
+      <div class="show-buttons has-text-centered">
+        <a ui-sref="crawlsEdit({ id: crawlsShow.crawl._id })" class="button is-primary">Edit Crawl</a>
+        <button ng-click="crawlsShow.handleDelete()" class="button">Delete Crawl</button>
+      </div>
+
     </div>
     <div class="column is-one-third-desktop" ng-repeat="pub in crawlsShow.crawl.pubs">
       <div class="card pub-card" >
@@ -33,7 +38,6 @@
         </div>
       </div>
     </div>
-    <a ui-sref="winesEdit({ id: winesShow.wine._id })" class="button is-primary">Edit</a>
-    <button ng-click="winesShow.handleDelete()" class="button">Delete</button>
+
   </div>
 </div>
