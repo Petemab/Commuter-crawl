@@ -7,20 +7,4 @@
   width: 500px;
 }
 
-///////////////////////////////////////////////////////////////////////////////
-// NAV-BAR
-///////////////////////////////////////////////////////////////////////////////
-
-#nav-title {
-  line-height: 1.725;
-}
-
-.navbar-end a {
-  line-height: 4.5;
-  padding: 1px 10px;
-}
-
-.navbar-end a:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  border-bottom: 2px solid black;
-}
+@import 'navbar';

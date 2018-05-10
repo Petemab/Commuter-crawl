@@ -12,10 +12,10 @@
         <p class="title is-6">You'll start your crawl at {{ crawlsShow.crawl.start}} tube station</p>
         <p class="title is-6">Your crawl will end at {{ crawlsShow.crawl.end }} tube station</p>
         <ul>
-          <li ng-repeat="bar in crawlsShow.crawl.bars"><a ng-click="showDetails = ! showDetails">{{ crawlsShow.crawl.pub.name }}</a>
+          <li ng-repeat="pub in crawlsShow.crawl.bars"><a ng-click="showDetails = ! showDetails">{{ crawlsShow.crawl.pub.name }}</a>
           <div class="bar-details" ng-show="showDetails">
             <p>Address: {{ crawlsShow.crawl.pub.vicinity}}</p>
-            <p>{{ crawlsShow.crawl.bar.geometry.location }}</p>
+
             <img class="show-image" ng-url="">{{ bar.photos[0].getUrl({ 'maxWidth': 100, 'maxHeight': 100 }); }}</img>
           </div>
         </ul>
