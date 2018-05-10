@@ -1,3 +1,11 @@
 .input {
   width: 100%;
 }
+
+.background-container {
+  background-image: url("https://i.imgur.com/xo8I8qT.jpg");
+  height: calc(100vh - 132px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

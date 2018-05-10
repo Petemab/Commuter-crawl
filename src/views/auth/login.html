@@ -1,51 +1,49 @@
-<p ng-if="login.data.error">{{ login.data.error }}</p>
 
-<form name="login.form" ng-submit="login.handleLogin()" novalidate>
 
-  <div class="container">
-    <div class="auth-columns">
-      <div class="column is-one-third">
+  <p ng-if="login.data.error">{{ login.data.error }}</p>
+<div class="background-container">
+  <form name="login.form" ng-submit="login.handleLogin()" novalidate>
 
-      </div>
-      <div class="column is-one-third">
-        <div class="auth-card">
-          <div class="card-content">
-            <div class="field">
-              <label for="email"></label>
-              <input class="input is-rounded is-primary" placeholder="Email" name="email" ng-model="login.data.email" required />
-              <div ng-if="login.form.email.$touched || login.form.$submitted">
-                <small ng-if="login.form.email.$error.required">This field is required</small>
+      <div class="columns">
+
+        <div class="column is-one-third">
+
+        </div>
+
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-content">
+              <h1 class="is-size-1">Login</h1>
+              <p class="is-size-7">Please enter your login details below</p>
+
+              <div class="field">
+                <input class="input is-rounded is-primary" placeholder="Email" name="email" ng-model="login.data.email" required />
+                <div ng-if="login.form.email.$touched || login.form.$submitted">
+                  <small ng-if="login.form.email.$error.required">This field is required</small>
+                </div>
               </div>
-            </div>
-            <div class="field">
-              <label for="password"></label>
-              <input class="input is-rounded is-primary" type="password" placeholder="Password" name="password" ng-model="login.data.password" required />
-              <div ng-if="login.form.password.$touched || login.form.$submitted">
-                <small ng-if="login.form.password.$error.required">This field is required</small>
+              <div class="field">
+
+                <input class="input is-rounded is-primary" type="password" placeholder="Password" name="password" ng-model="login.data.password" required />
+                <div ng-if="login.form.password.$touched || login.form.$submitted">
+                  <small ng-if="login.form.password.$error.required">This field is required</small>
+                </div>
+                <footer class="card-footer">
+                  <p class="card-footer-item">
+                    <span>
+                      <button class="button is-rounded is-warning is-outlined">Submit</button>
+                    </span>
+                  </p>
+                </footer>
               </div>
-              <footer class="card-footer">
-                <p class="card-footer-item">
-                  <span>
-                    <button class="button is-rounded is-warning is-outlined">Submit</button>
-                  </span>
-                </p>
-              </footer>
             </div>
           </div>
         </div>
 
+        <div class="column is-one-third">
+
+        </div>
 
       </div>
-    </div>
-
-  </div>
-
-  <div class="column is-one-third">
-
-  </div>
+  </form>
 </div>
-</div>
-
-
-
-</form>
