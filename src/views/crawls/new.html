@@ -80,25 +80,32 @@
 
   <div class="column">
     <section ng-if="crawlsNew.showMap">
-      <h2>Itinerary</h2>
-      <h1>{{ crawlsNew.data.name }}</h1>
-      <p>Date: {{ crawlsNew.data.date }}</p>
-      <p>Line: {{ crawlsNew.data.tubeLine }}</p>
-      <p>Start Station: {{ crawlsNew.data.startPoint.name }}</p>
-      <p>End Station: {{ crawlsNew.data.endPoint.name }}</p>
+      <p class="has-text-weight-bold is-capitalized is-size-2">{{ crawlsNew.data.name }}</p>
+      <p class="is-size-5">Date: {{ crawlsNew.data.date }}</p>
+      <p class="has-text-weight-semibold is-capitalized is-size-4">{{ crawlsNew.data.tubeLine }} line</p>
+      <p class="is-size-5">Start Station: {{ crawlsNew.data.startPoint.name }}</p>
+      <p class="is-size-5">End Station: {{ crawlsNew.data.endPoint.name }}</p>
+
       <div class="bar-info" ng-repeat="pub in crawlsNew.data.pubs">
-        <ul>
-          <li>{{ pub.name }}</li>
-          <li>{{ pub.address }}</li>
-          <li><img ng-src="{{ pub.image }}"></li>
-        </ul>
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-2by1">
+              <img ng-src="{{ pub.image }}" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+                <p class="is-size-6 has-text-weight-bold">{{ pub.name }}</p>
+                <p class="is-size-7 has-text-weight-semibold">Address: {{ pub.address }}</p>
+            </div>
+          </div>
+        </div>
       </div>
+
       <button class="button is-primary" ng-click="crawlsNew.handleCreate()">Save Crawl</button>
     </section>
   </div>
 </div>
-
-
 
 <ul>
   <li ng-repeat="bar in crawlsNew.bars">
