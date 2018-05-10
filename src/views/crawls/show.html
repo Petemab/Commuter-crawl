@@ -1,22 +1,21 @@
 
 
-
+<pre>{{ crawlsShow.crawl.pubs }}</pre>
 
 <div class="container">
   <div class="columns">
-    <div g-map center="{ lat: 51.515, lng: -0.078 }" class="map coloumn is-half" ></div>
+    <div g-map center="{ lat: 51.515, lng: -0.078 }" class="map column is-half" ></div>
     <div class="column is-half">
         <p class="title is-2">{{ crawlsShow.crawl.name }}</p>
         <p class="title is-4">{{ crawlsShow.crawl.date}}</p>
-        <p class="title is-5">You'll be crawling on the {{ crawlsShow.crawl.line}} line!</p>
-        <p class="title is-6">You'll start your crawl at {{ crawlsShow.crawl.start}} tube station</p>
-        <p class="title is-6">Your crawl will end at {{ crawlsShow.crawl.end }} tube station</p>
+        <p class="title is-5">You'll be crawling on the {{ crawlsShow.crawl.tubeLine}} line!</p>
+        <p class="title is-6">You'll start your crawl at {{ crawlsShow.crawl.startPoint.name}} tube station</p>
+        <p class="title is-6">Your crawl will end at {{ crawlsShow.crawl.endPoint.name }} tube station</p>
         <ul>
-          <li ng-repeat="pub in crawlsShow.crawl.bars"><a ng-click="showDetails = ! showDetails">{{ crawlsShow.crawl.pub.name }}</a>
+          <li ng-repeat="pub in crawlsShow.crawl.pubs"><a ng-click="showDetails = ! showDetails">{{ pub.name }}</a>
           <div class="bar-details" ng-show="showDetails">
-            <p>Address: {{ crawlsShow.crawl.pub.vicinity}}</p>
-
-            <img class="show-image" ng-url="">{{ bar.photos[0].getUrl({ 'maxWidth': 100, 'maxHeight': 100 }); }}</img>
+            <p>Address: pub.address}}</p>
+            <img class="show-image" ng-src="{{ pub.image }}">
           </div>
         </ul>
     </div>
