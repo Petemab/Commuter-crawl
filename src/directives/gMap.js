@@ -29,6 +29,7 @@ function gMap() {
       $scope.$watch('stations', () => {
         markers.forEach(marker => marker.setMap(null));
         markers = $scope.stations.map(station => {
+          $scope.center = station.location;
           const marker = new google.maps.Marker({
             position: station.location,
             map
