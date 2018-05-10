@@ -3,7 +3,17 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #nav-title {
+  color: #ffffff;
   line-height: 1.725;
+  padding-left: 40px;
+}
+
+#nav-title:hover {
+  color: #e9b000;
+}
+
+.navbar-end {
+  padding-right: 40px;
 }
 
 .navbar-end a {
@@ -12,14 +22,17 @@
 }
 
 .navbar-end a:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  border-bottom: 2px solid black;
-
+  background-color: #008f95;
+  border-bottom: 4px solid #e9b000;
+  color: #e9b000;
 }
 
 .navbar{
   background-color: #008f95;
+}
 
+.navbar a {
+  color: #ffffff;
 }
 
 .title {

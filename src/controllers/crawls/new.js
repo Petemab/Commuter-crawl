@@ -56,6 +56,7 @@ function CrawlsNewCtrl(Crawl, $state, $scope, $http) {
 
   function addBar(bar) {
     console.log('add bar ----------->', bar);
+    if(vm.data.pubs.includes(bar)) return false;
     vm.data.pubs.push(bar);
   }
 
