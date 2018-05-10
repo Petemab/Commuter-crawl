@@ -1,21 +1,24 @@
-.footer{
-  background-color: #00575B;
-  position: fixed;
+footer .container {
+  background-color: #008f95;
+  // position: fixed;
   bottom: 0;
+  line-height: 3.4;
   width: 100%;
-  height: 10px;
-    font-family: 'Bungee Inline', cursive;
+  height: 50px;
+  font-family: 'Poppins', cursive;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.footer p, p strong {
+footer p, p strong {
   color: #ffffff;
 }
 
-.footer a {
+footer a {
   color: #ffffff;
 }
 
-.footer a:hover {
+footer a:hover {
   color: #e9b000;
   text-decoration: underline;
 }
