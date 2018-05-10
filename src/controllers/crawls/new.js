@@ -1,5 +1,6 @@
 CrawlsNewCtrl.$inject = ['Crawl', '$state', '$scope', '$http'];
 function CrawlsNewCtrl(Crawl, $state, $scope, $http) {
+
   const vm = this;
   vm.data = {
     pubs: []
@@ -9,17 +10,8 @@ function CrawlsNewCtrl(Crawl, $state, $scope, $http) {
   vm.showMap = false;
 
   function handleCreate() {
-    console.log(vm.form);
-    if(vm.form.$invalid) return false;
     Crawl.create(vm.data)
-      .then(() => $state.go('crawlsIndex'));
-
-  }
-
-  function handleSubmit() {
-    if(vm.form.$invalid) return false;
-    Crawl.create(vm.data)
-      .then(() => $state.go('crawlsShow'));
+      .then(res => $state.go('crawlsShow', { id: res.data._id }));
   }
 
   function getStations(lineId) {
@@ -68,7 +60,6 @@ function CrawlsNewCtrl(Crawl, $state, $scope, $http) {
   vm.addBar = addBar;
   vm.getBars = getBars;
   vm.handleCreate = handleCreate;
-  vm.handleSubmit = handleSubmit;
   $scope.$watch(() => vm.data.tubeLine, () => getStations(vm.data.tubeLine));
   vm.getCrawlStations = getCrawlStations;
 }

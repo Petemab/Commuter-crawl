@@ -26,8 +26,6 @@ import LoginCtrl from './controllers/auth/login';
 import gMap from './directives/gMap.js';
 import Crawl from './models/crawl';
 
-
-
 angular.module('crawls', ['ui.router', 'satellizer', 'ngMessages'])
   .config(Router)
   .config(Auth)

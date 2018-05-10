@@ -1,5 +1,5 @@
-<!-- <pre>{{ crawlsNew.data | json }}</pre> -->
-<form name="crawlsNew.form" ng-if="!crawlsNew.showMap" novalidate>
+<pre>{{ crawlsNew.data | json }}</pre>
+<form ng-if="!crawlsNew.showMap" novalidate>
   <div class="field">
     <label for="name">Name</label>
     <input class="input" placeholder="Name" name="name" ng-model="crawlsNew.data.name" required />
@@ -72,9 +72,7 @@
 
   <!-- ng-submit="crawlsNew.handleCreate()" -->
 </form>
-<form ng-submit="crawlsNew.handleSubmit()">
 <div g-map center="{ lat: 51.515, lng: -0.078 }" class="map" ng-if="crawlsNew.showMap" stations="crawlsNew.crawlStations" get-bars="crawlsNew.getBars(bars)" bars="crawlsNew.bars" add-bar="crawlsNew.addBar(bar)">
-
 </div>
 
 <section ng-if="crawlsNew.showMap">
@@ -88,13 +86,11 @@
     <ul>
       <li>{{ pub.name }}</li>
       <li>{{ pub.address }}</li>
-      <li><img src="{{ pub.image }}"></li>
+      <li><img ng-src="{{ pub.image }}"></li>
     </ul>
   </div>
-  <input type="submit">
+  <button ng-click="crawlsNew.handleCreate()">Save Crawl</button>
 </section>
-
-</form>
 
 
 
