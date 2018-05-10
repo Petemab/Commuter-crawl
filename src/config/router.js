@@ -2,8 +2,7 @@ Router.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 function Router($stateProvider, $urlRouterProvider){
   $stateProvider
-    .state({
-      name: 'home',
+    .state('home', {
       url: '/',
       templateUrl: 'views/home.html'
     })
