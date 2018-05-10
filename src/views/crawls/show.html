@@ -1,23 +1,26 @@
 
 
-<pre>{{ crawlsShow.crawl.pubs }}</pre>
 
-<div class="container">
+<div class="container showContainer">
+
   <div class="columns">
+
     <div g-maps-show center="crawlsShow.crawl.center" pubs="crawlsShow.crawl.pubs" class="showMap column is-half" ></div>
     <div class="column is-half">
-        <p class="title is-2 is-capitalized">{{ crawlsShow.crawl.name }}</p>
-        <p class="title is-4">{{ crawlsShow.crawl.date}}</p>
-        <p class="title is-5">You'll be crawling on the {{ crawlsShow.crawl.tubeLine}} line!</p>
-        <p class="title is-6">You'll start your crawl at {{ crawlsShow.crawl.startPoint.name}} tube station</p>
-        <p class="title is-6">Your crawl will end at {{ crawlsShow.crawl.endPoint.name }} tube station</p>
-        <ul>
-          <li ng-repeat="pub in crawlsShow.crawl.pubs"><a ng-click="showDetails = ! showDetails">{{ pub.name }}</a>
-          <div class="bar-details" ng-show="showDetails">
-            <p>Address: {{ pub.address }}</p>
-            <p>{{ pub.location }}</p>
-            <img class="show-image" ng-src="{{ pub.image }}">
-          </div>
-        </ul>
+  
+      <p class="title is-2 is-capitalized">{{ crawlsShow.crawl.name }}</p>
+      <p class="title is-4">{{ crawlsShow.crawl.date}}</p>
+      <p class="title is-5">You'll be crawling on the {{ crawlsShow.crawl.tubeLine}} line!</p>
+      <p class="title is-6">You'll start your crawl at {{ crawlsShow.crawl.startPoint.name}} tube station</p>
+      <p class="title is-6">Your crawl will end at {{ crawlsShow.crawl.endPoint.name }} tube station</p>
+      <ul>
+        <li ng-repeat="pub in crawlsShow.crawl.pubs"><a ng-click="showDetails = ! showDetails">{{ pub.name }}</a>
+        <div class="bar-details" ng-show="showDetails">
+          <p>Address: {{ pub.address }}</p>
+          <p>{{ pub.location }}</p>
+          <img class="show-image" ng-src="{{ pub.image }}">
+        </div>
+      </ul>
     </div>
   </div>
+</div>

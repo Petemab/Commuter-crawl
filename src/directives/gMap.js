@@ -56,7 +56,7 @@ function gMap() {
                 const marker = new google.maps.Marker({
                   position: bar.location,
                   map
-                  // icon:
+                  // icon: 
                 });
                 marker.addListener('click', () => {
                   infowindow.setContent(

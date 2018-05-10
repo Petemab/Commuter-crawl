@@ -2,6 +2,8 @@
 
 @import '~bulma';
 
+@import 'showpage';
+
 .bar-info {
   padding: 10px 0;
 }
@@ -35,3 +37,4 @@ form {
 
 @import 'login';
 @import 'registration';
+@import 'home';
