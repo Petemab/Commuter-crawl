@@ -81,7 +81,7 @@
   <div class="column">
     <section ng-if="crawlsNew.showMap">
       <p class="has-text-weight-bold is-capitalized is-size-2">{{ crawlsNew.data.name }}</p>
-      <p class="is-size-5">Date: {{ crawlsNew.data.date }}</p>
+      <p class="is-size-5">Date: {{ crawlsNew.data.date | date }}</p>
       <p class="has-text-weight-semibold is-capitalized is-size-4">{{ crawlsNew.data.tubeLine }} line</p>
       <p class="is-size-5">Start Station: {{ crawlsNew.data.startPoint.name }}</p>
       <p class="is-size-5">End Station: {{ crawlsNew.data.endPoint.name }}</p>

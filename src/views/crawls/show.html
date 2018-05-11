@@ -10,7 +10,7 @@
       <div class="card showCard">
         <div class="crawl-info">
           <p class="title is-2 is-capitalized">{{ crawlsShow.crawl.name }}</p>
-          <p class="title is-4">{{ crawlsShow.crawl.date}}</p>
+          <p class="title is-4">{{ crawlsShow.crawl.date | date }}</p>
           <p class="title is-5">You'll be crawling on the {{ crawlsShow.crawl.tubeLine}} line!</p>
           <p class="title is-6">You'll start your crawl at {{ crawlsShow.crawl.startPoint.name}} tube station</p>
           <p class="title is-6">Your crawl will end at {{ crawlsShow.crawl.endPoint.name }} tube station</p>
