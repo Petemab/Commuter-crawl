@@ -2,14 +2,14 @@
 <form ng-if="!crawlsNew.showMap" novalidate>
   <div class="field">
     <label for="name">Name</label>
-    <input class="input" placeholder="Name" name="name" ng-model="crawlsNew.data.name" required />
+    <input class="input is-rounded" placeholder="Name" name="name" ng-model="crawlsNew.data.name" required />
     <div ng-if="crawlsNew.form.name.$touched || crawlsNew.form.$submitted">
       <small ng-if="crawlsNew.form.name.$error.required">This field is required</small>
     </div>
   </div>
   <div class="field">
     <label for="date">Date</label>
-    <input class="input" type="date" name="date" ng-model="crawlsNew.data.date" required />
+    <input class="input is-rounded" type="date" name="date" ng-model="crawlsNew.data.date" required />
     <div ng-if="crawlsNew.form.date.$touched || crawlsNew.form.$submitted">
       <small ng-if="crawlsNew.form.date.$error.required">This field is required</small>
     </div>
@@ -68,7 +68,7 @@
   </div>
 
 
-  <button ng-if="crawlsNew.data.name && crawlsNew.data.date && crawlsNew.data.startPoint && crawlsNew.data.endPoint" class="button is-primary" ng-click="crawlsNew.getCrawlStations()">Continue</button>
+  <button ng-if="crawlsNew.data.name && crawlsNew.data.date && crawlsNew.data.startPoint && crawlsNew.data.endPoint" class="button is-primary is-rounded is-outlined" ng-click="crawlsNew.getCrawlStations()">Continue</button>
 
   <!-- ng-submit="crawlsNew.handleCreate()" -->
 </form>
@@ -102,7 +102,7 @@
         </div>
       </div>
 
-      <button class="button is-primary" ng-click="crawlsNew.handleCreate()">Save Crawl</button>
+      <button class="button is-primary is-rounded is-outlined" ng-click="crawlsNew.handleCreate()">Save Crawl</button>
     </section>
   </div>
 </div>
