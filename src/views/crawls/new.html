@@ -2,14 +2,14 @@
 <form ng-if="!crawlsNew.showMap" novalidate>
   <div class="field">
     <label for="name">Name</label>
-    <input class="input" placeholder="Name" name="name" ng-model="crawlsNew.data.name" required />
+    <input class="input is-rounded" placeholder="Name" name="name" ng-model="crawlsNew.data.name" required />
     <div ng-if="crawlsNew.form.name.$touched || crawlsNew.form.$submitted">
       <small ng-if="crawlsNew.form.name.$error.required">This field is required</small>
     </div>
   </div>
   <div class="field">
     <label for="date">Date</label>
-    <input class="input" type="date" name="date" ng-model="crawlsNew.data.date" required />
+    <input class="input is-rounded" type="date" name="date" ng-model="crawlsNew.data.date" required />
     <div ng-if="crawlsNew.form.date.$touched || crawlsNew.form.$submitted">
       <small ng-if="crawlsNew.form.date.$error.required">This field is required</small>
     </div>
@@ -68,44 +68,44 @@
   </div>
 
 
-  <button ng-if="crawlsNew.data.name && crawlsNew.data.date && crawlsNew.data.startPoint && crawlsNew.data.endPoint" class="button is-primary" ng-click="crawlsNew.getCrawlStations()">Continue</button>
+  <button ng-if="crawlsNew.data.name && crawlsNew.data.date && crawlsNew.data.startPoint && crawlsNew.data.endPoint" class="button is-primary is-rounded is-outlined" ng-click="crawlsNew.getCrawlStations()">Continue</button>
 
   <!-- ng-submit="crawlsNew.handleCreate()" -->
 </form>
 <div class="columns is-multiline is-centered">
   <div class="column">
     <div g-map center="crawlsNew.data.center" class="map" ng-if="crawlsNew.showMap" stations="crawlsNew.crawlStations" get-bars="crawlsNew.getBars(bars)" bars="crawlsNew.bars" add-bar="crawlsNew.addBar(bar)">
-    </div>
   </div>
+</div>
 
-  <div class="column is-one-third">
-    <section ng-if="crawlsNew.showMap">
-      <p class="has-text-weight-bold is-capitalized is-size-2">{{ crawlsNew.data.name }}</p>
-      <p class="is-size-5">Date: {{ crawlsNew.data.date | date }}</p>
-      <p class="has-text-weight-semibold is-capitalized is-size-4">{{ crawlsNew.data.tubeLine }} line</p>
-      <p class="is-size-5">Start Station: {{ crawlsNew.data.startPoint.name }}</p>
-      <p class="is-size-5">End Station: {{ crawlsNew.data.endPoint.name }}</p>
-      <button class="button is-primary" ng-click="crawlsNew.handleCreate()">Save Crawl</button>
-    </section>
-  </div>
-  <div class="bar-info" ng-repeat="pub in crawlsNew.data.pubs">
-    <div class="column is-one-third is-narrow">
-      <div id="bar-card" class="card">
-        <div class="card-image">
-          <figure class="image is-2by1">
-            <img ng-src="{{ pub.image }}" alt="Placeholder image">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="content">
-            <p class="is-size-6 has-text-weight-bold">{{ pub.name }}</p>
-            <p class="is-size-7 has-text-weight-semibold">Address: {{ pub.address }}</p>
-          </div>
+<div class="column is-one-third">
+  <section ng-if="crawlsNew.showMap">
+    <p class="has-text-weight-bold is-capitalized is-size-2">{{ crawlsNew.data.name }}</p>
+    <p class="is-size-5">Date: {{ crawlsNew.data.date | date }}</p>
+    <p class="has-text-weight-semibold is-capitalized is-size-4">{{ crawlsNew.data.tubeLine }} line</p>
+    <p class="is-size-5">Start Station: {{ crawlsNew.data.startPoint.name }}</p>
+    <p class="is-size-5">End Station: {{ crawlsNew.data.endPoint.name }}</p>
+    <button class="button is-primary" ng-click="crawlsNew.handleCreate()">Save Crawl</button>
+  </section>
+</div>
+<div class="bar-info" ng-repeat="pub in crawlsNew.data.pubs">
+  <div class="column is-one-third is-narrow">
+    <div id="bar-card" class="card">
+      <div class="card-image">
+        <figure class="image is-2by1">
+          <img ng-src="{{ pub.image }}" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="content">
+          <p class="is-size-6 has-text-weight-bold">{{ pub.name }}</p>
+          <p class="is-size-7 has-text-weight-semibold">Address: {{ pub.address }}</p>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 <!-- <ul>
   <li ng-repeat="bar in crawlsNew.bars">
