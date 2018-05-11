@@ -4,7 +4,13 @@
 
 @import 'showpage';
 
+#bar-card {
+  // display: inline;
+  max-width: 300px;
+}
+
 .bar-info {
+  display: inline;
   padding: 10px 0;
 }
 
