@@ -23,9 +23,9 @@
   padding-top: 60px;
 }
 
-.card-content {
-  padding: 14px 14px;
-}
+// .card-content {
+//   padding: 14px 14px;
+// }
 
 .map {
   height: 500px;
@@ -35,6 +35,10 @@
 form {
   margin: 0 50px;
   padding-top: 60px;
+}
+
+.newcontainer {
+  padding-bottom: 50px;
 }
 
 @import 'navbar';

@@ -55,8 +55,8 @@ function gMap() {
               markers = $scope.bars.map(bar => {
                 const marker = new google.maps.Marker({
                   position: bar.location,
-                  map
-                  // icon: 
+                  map,
+                  icon: 'http://feedus.media/wp/wp-content/uploads/leaflet-maps-marker-icons/beer_pin-3.png'
                 });
                 marker.addListener('click', () => {
                   infowindow.setContent(

@@ -14,9 +14,14 @@ function Crawl($http) {
     return $http.post('/api/crawls', data);
   }
 
+  function removeById(id) {
+    return $http.delete(`/api/crawls/${id}`);
+  }
+
   this.findById = findById;
   this.updateById = updateById;
   this.create = create;
+  this.removeById = removeById;
 }
 
 export default Crawl;
