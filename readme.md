@@ -128,25 +128,23 @@ Show page:
 
 ### Challenges and Problems
 
-* The biggest challenge with this project was working in a group, particularly given all three of us were trying to get to grips with both Angular while at the same time building the app. We tried to ensure we communicated frequently, either in person or over Slack and kept the Trello board updated. Despite this it was still tricky.
+* The biggest challenge with this project was working in a group, particularly given all three of us were trying to get to grips with both Angular while at the same time building the app. We tried to ensure we communicated frequently, either in person or over Slack and kept the Trello board updated.
 
 * Myself and James focused a lot of our attention on the new page, which was quite a challenge. We spent a lot of time ensuring we were getting the correct info from our http request to the TFL api and that that info was then used to make a request to plot Google markers. While this would probably seem fairly easy to a more experienced developer, it was new to us both it took a lot longer than we'd expected.
 
-* Another challenge of group work on a new framework was understanding each others code! While we knew what each other were trying to achieve, we often got confused as to how the others had approached issues due to unfamiliarity with Angular. In retrospect we should have commented our code much more thoroughly.
+* Another challenge of group work on a new framework was understanding each others code! While we knew what each other were trying to achieve, we often got confused as to how the others had approached issues due to unfamiliarity with Angular. It taught me the importance of commenting code properly.
 
 * The edit page also proved tricky. As so much of the content for the form came from http requests it seemed illogical to pre fill a new form. In the end, and due to time constraints, we opted to just give users the chance to delete and start again.
-
-* The styling left something to be desired, and I'd want to try and change the whole look of the app.
 
 ---
 
 ### Wins
 
-* It works! The app does what it says it will, even if the code is perhaps not as neat and tidy as I would have hoped.
+* It works! The app does what it says it will.
 
-* We managed to overcome quite a complicated issue with the external APIs.
+* We managed to get the info required from the external APIs.
 
-* We made MVP and gave ourlselves a platform on which to build further.
+* We made MVP and gave ourselves a platform on which to build further.
 
 ---
 
@@ -158,6 +156,8 @@ Features I would have liked to include:
 
 * Adding Google Routes to show distance between bars and stations would also add something.
 
-* I would like to restyle the app, which I tink would lift it a lot.
+* I would like to restyle the app, which I think would lift it a lot.
 
-* It would be interesting to try and replicate in a new framwork.
+* It would be interesting to try and replicate in a new framework.
+
+* I'd like to go back and neaten up the code.
